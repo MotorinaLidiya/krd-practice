@@ -1,4 +1,10 @@
 require 'rspec'
+require 'simplecov'
+
+SimpleCov.start do
+  add_filter '/spec/'
+end
+
 require './task2'
 
 RSpec.describe 'task2' do
