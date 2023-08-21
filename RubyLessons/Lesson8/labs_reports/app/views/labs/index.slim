@@ -1,7 +1,20 @@
-h1 Labs reports
+h1.text-center Labs reports
+= link_to 'Add report', new_lab_path, class:'btn btn-light border mb-4'
 - @labs.each do |lab|
-  h4
-   = lab.title
-  p
-   = lab.description
-  p
+  = turbo_frame_tag "lab_#{lab.id}" do
+    h4 = lab.title
+    .fst-italic
+      span = 'User: '
+      span = "#{lab.user.full_name} (#{lab.user.email})"
+    h5.fw-normal = lab.description
+    .row
+      .col-sm-3.col-4
+        - if lab.grade?
+            .d-inline.align-middle
+              span = 'Mark: '
+              span.text-uppercase = lab.grade
+        - else
+          = link_to 'Add Mark', grade_lab_path(lab), class: 'btn btn-light border mb-4',  data: { turbo: false }
+      .col-1
+        = link_to 'Remove', lab_path(lab), class: 'btn btn-light border mb-4',  data: { turbo_confirm: "Are you sure?", turbo_method: :delete }
+

@@ -10,13 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_17_211242) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_18_204932) do
   create_table "labs", force: :cascade do |t|
     t.string "title", limit: 250
     t.text "description", limit: 500
     t.integer "grade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "user_id"
+    t.index ["user_id"], name: "index_labs_on_user_id"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "first_name", limit: 100
+    t.string "last_name", limit: 100
+    t.string "email", limit: 150
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "labs", "users"
 end

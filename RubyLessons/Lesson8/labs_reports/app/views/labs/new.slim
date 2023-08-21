@@ -1,0 +1,8 @@
+.container.mt-5
+  = simple_form_for @lab do |f|
+    = f.input :title
+    = f.input :description
+    = f.association :user, collection: User.all.map { [_1.full_name, _1.id] }, label: false, include_blank: false, prompt: 'Choose user'
+    .row.justify-content-md-center
+      .col-1 = f.button :submit, 'Save', class: 'btn btn-light', data: { turbo: false }
+      .col-1 = link_to 'Back', :back, class: 'btn btn-light'

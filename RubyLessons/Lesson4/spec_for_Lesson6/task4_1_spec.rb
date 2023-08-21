@@ -9,13 +9,17 @@ end
 require_relative '../task4_1'
 
 RSpec.describe MyFile do
-  let(:temp_file) { Tempfile.new }
+  let(:temp_file) do
+    file = Tempfile.new("test_file")
+    file.write("Line 1\nLine 2\nLine 3\nLine 4\n")
+    file.rewind
+    file
+  end
+
   let(:my_file) { MyFile.new }
 
   before do
     my_file.main(temp_file.path)
-    temp_file.write("Line 1\nLine 2\nLine 3\nLine 4\n")
-    temp_file.rewind
   end
 
   after do

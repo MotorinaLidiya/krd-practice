@@ -1,0 +1,6 @@
+<% flash.each do |key, value| %>
+  <div class="<%= flash_class(key) %>">
+    <span><%= value %></span>
+    <button type="button" class="btn-close float-end" data-bs-dismiss='alert' aria-label="Close"></button>
+  </div>
+<% end %>
