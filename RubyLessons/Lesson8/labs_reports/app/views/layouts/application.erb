@@ -14,8 +14,17 @@
     <turbo-frame id="flash">
       <%= render 'shared/flash' %>
     </turbo-frame>
-
+    
     <div class='container'>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+
+      <% if user_signed_in? %>
+      <%= link_to "Main page", root_path %>
+      <h3>Welcome <%= current_user.email %></h3>
+      <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %>
+      <% end %>
+
       <%= yield %>
     </div>
   </body>
