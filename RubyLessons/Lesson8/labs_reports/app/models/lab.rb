@@ -4,6 +4,6 @@ class Lab < ApplicationRecord
   belongs_to :user
 
   validate_enum_attribute :grade
-  validates :description, length: { maximum: 500 }
+  validates :description, presence: true, length: { maximum: 500 }
   validates :title, presence: true, length: { maximum: 250 }
 end

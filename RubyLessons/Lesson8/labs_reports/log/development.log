@@ -18372,3 +18372,2911 @@ Processing by Rails::InfoController#routes as HTML
 Completed 200 OK in 59ms (Views: 45.4ms | ActiveRecord: 0.0ms | Allocations: 20562)
 
 
+Started GET "/" for 127.0.0.1 at 2023-09-16 20:33:10 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LabsController#index as HTML
+Completed 401 Unauthorized in 18ms (ActiveRecord: 0.0ms | Allocations: 6348)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 20:33:10 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.9ms | Allocations: 737)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 83.1ms | Allocations: 34647)
+  Rendered shared/_flash.erb (Duration: 0.6ms | Allocations: 192)
+  Rendered layout layouts/application.erb (Duration: 7467.6ms | Allocations: 180014)
+Completed 200 OK in 7496ms (Views: 7480.2ms | ActiveRecord: 0.5ms | Allocations: 190884)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-16 20:34:26 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 169)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 36.3ms | Allocations: 23358)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.erb (Duration: 46.0ms | Allocations: 29485)
+Completed 200 OK in 50ms (Views: 48.5ms | ActiveRecord: 0.0ms | Allocations: 30768)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-09-16 20:34:31 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Вячеслав", "last_name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :first_name, :last_name. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f0d50a722e0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Вячеслав", "last_name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 81)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 35.3ms | Allocations: 25443)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.erb (Duration: 48.3ms | Allocations: 31385)
+Completed 422 Unprocessable Entity in 58ms (Views: 49.4ms | ActiveRecord: 0.0ms | Allocations: 35206)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-16 20:34:34 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 79)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 23.0ms | Allocations: 21800)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.erb (Duration: 31.7ms | Allocations: 27689)
+Completed 200 OK in 34ms (Views: 32.5ms | ActiveRecord: 0.0ms | Allocations: 28302)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-09-16 20:35:00 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Евгений", "last_name"=>"Павлюченко", "email"=>"1@1.1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :first_name, :last_name. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007f0d4e4b4030>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Евгений", "last_name"=>"Павлюченко", "email"=>"1@1.1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "1@1.1"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", nil], ["last_name", nil], ["email", "1@1.1"], ["created_at", "2023-09-16 17:35:00.624501"], ["updated_at", "2023-09-16 17:35:00.624501"], ["encrypted_password", "$2a$12$v2zUNqHURIGW/i9u70iYIOtBUEUpYuES/w4WRFLeU7N8Hp4dYw3WG"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 245ms (ActiveRecord: 6.9ms | Allocations: 12346)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 20:35:00 +0300
+Processing by LabsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  Rendered labs/index.slim within layouts/application (Duration: 45.0ms | Allocations: 28694)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 40)
+  Rendered layout layouts/application.erb (Duration: 53.8ms | Allocations: 34910)
+Completed 200 OK in 67ms (Views: 53.9ms | ActiveRecord: 1.3ms | Allocations: 39951)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 20:35:32 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  Rendered labs/index.slim within layouts/application (Duration: 12.0ms | Allocations: 3762)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 22.2ms | Allocations: 9609)
+Completed 200 OK in 27ms (Views: 22.6ms | ActiveRecord: 0.9ms | Allocations: 11262)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 20:35:34 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  Rendered labs/index.slim within layouts/application (Duration: 11.2ms | Allocations: 3760)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 19.4ms | Allocations: 9663)
+Completed 200 OK in 23ms (Views: 19.6ms | ActiveRecord: 0.6ms | Allocations: 11205)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 20:35:40 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  Rendered labs/index.slim within layouts/application (Duration: 11.2ms | Allocations: 3758)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 21.2ms | Allocations: 9699)
+Completed 200 OK in 25ms (Views: 21.6ms | ActiveRecord: 0.6ms | Allocations: 11206)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 20:35:41 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  Rendered labs/index.slim within layouts/application (Duration: 12.6ms | Allocations: 3760)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 21.2ms | Allocations: 9603)
+Completed 200 OK in 25ms (Views: 21.2ms | ActiveRecord: 0.7ms | Allocations: 11138)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 20:36:14 +0300
+Processing by LabsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 182)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 20:36:14 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 30.4ms | Allocations: 20561)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.erb (Duration: 46.4ms | Allocations: 26458)
+Completed 200 OK in 51ms (Views: 48.5ms | ActiveRecord: 0.0ms | Allocations: 27092)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-09-16 20:36:24 +0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"1@1.1", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "1@1.1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (0.3ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "remember_created_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2023-09-16 17:36:24.908344"], ["remember_created_at", "2023-09-16 17:36:24.907874"], ["id", 8]]
+  [1m[36mTRANSACTION (7.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 293ms (ActiveRecord: 7.8ms | Allocations: 9513)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 20:36:24 +0300
+Processing by LabsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  Rendered labs/index.slim within layouts/application (Duration: 13.6ms | Allocations: 3829)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 27)
+  Rendered layout layouts/application.erb (Duration: 26.3ms | Allocations: 9905)
+Completed 200 OK in 31ms (Views: 26.9ms | ActiveRecord: 0.7ms | Allocations: 11608)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 20:36:30 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.7ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  Rendered labs/index.slim within layouts/application (Duration: 13.8ms | Allocations: 3760)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 23.0ms | Allocations: 9603)
+Completed 200 OK in 27ms (Views: 22.7ms | ActiveRecord: 1.2ms | Allocations: 11158)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 20:36:44 +0300
+Processing by LabsController#index as */*
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 345)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 20:36:44 +0300
+Processing by Devise::SessionsController#new as */*
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 47.4ms | Allocations: 21293)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.erb (Duration: 58.5ms | Allocations: 27203)
+Completed 200 OK in 62ms (Views: 60.1ms | ActiveRecord: 0.0ms | Allocations: 27853)
+
+
+Started GET "/labs/new" for 127.0.0.1 at 2023-09-16 20:37:02 +0300
+Processing by LabsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/new.slim within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/labs/new.slim:5:in `map'
+  Rendered labs/new.slim within layouts/application (Duration: 41.0ms | Allocations: 29134)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 30)
+  Rendered layout layouts/application.erb (Duration: 53.6ms | Allocations: 35229)
+Completed 200 OK in 59ms (Views: 54.3ms | ActiveRecord: 0.3ms | Allocations: 36867)
+
+
+Started POST "/labs" for 127.0.0.1 at 2023-09-16 20:37:09 +0300
+Processing by LabsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "lab"=>{"title"=>"test", "description"=>"", "user_id"=>"2"}, "commit"=>"Save"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/labs_controller.rb:23:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/labs_controller.rb:23:in `create'
+  [1m[36mLab Create (7.3ms)[0m  [1m[32mINSERT INTO "labs" ("title", "description", "grade", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "test"], ["description", ""], ["grade", nil], ["created_at", "2023-09-16 17:37:09.288959"], ["updated_at", "2023-09-16 17:37:09.288959"], ["user_id", 2]]
+  ↳ app/controllers/labs_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (16.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/labs_controller.rb:23:in `create'
+Redirected to http://127.0.0.1:3000/labs
+Completed 302 Found in 53ms (ActiveRecord: 24.2ms | Allocations: 4839)
+
+
+Started GET "/labs" for 127.0.0.1 at 2023-09-16 20:37:09 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  Rendered labs/index.slim within layouts/application (Duration: 72.6ms | Allocations: 4585)
+  Rendered shared/_flash.erb (Duration: 0.2ms | Allocations: 25)
+  Rendered layout layouts/application.erb (Duration: 112.0ms | Allocations: 10532)
+Completed 200 OK in 139ms (Views: 122.2ms | ActiveRecord: 1.2ms | Allocations: 12125)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 20:38:11 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 72.5ms | Allocations: 27054)
+  Rendered shared/_flash.erb (Duration: 0.6ms | Allocations: 204)
+  Rendered layout layouts/application.erb (Duration: 170.0ms | Allocations: 78338)
+Completed 200 OK in 217ms (Views: 172.7ms | ActiveRecord: 2.0ms | Allocations: 95724)
+
+
+Started GET "/labs" for 127.0.0.1 at 2023-09-16 20:38:23 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 5.0ms | Allocations: 2459)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered layout layouts/application.erb (Duration: 41.3ms | Allocations: 8437)
+Completed 200 OK in 48ms (Views: 44.9ms | ActiveRecord: 0.5ms | Allocations: 10243)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 20:38:32 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  Rendered labs/index.slim within layouts/application (Duration: 7.3ms | Allocations: 5131)
+  Rendered layout layouts/application.erb (Duration: 7.7ms | Allocations: 5229)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 1.4ms | Allocations: 13024)
+
+
+  
+ActionView::Template::Error (undefined method `each' for Lab:Class):
+    1: h1.text-center Labs reports
+    2: = link_to 'Add report', new_lab_path, class:'btn btn-light border mb-4'
+    3: - @labs.each do |lab|
+    4:   = turbo_frame_tag "lab_#{lab.id}" do
+    5:     h4 = lab.title
+    6:     .fst-italic
+  
+app/views/labs/index.slim:3
+Started GET "/" for 127.0.0.1 at 2023-09-16 20:38:41 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/labs/index.slim:8
+  Rendered labs/index.slim within layouts/application (Duration: 27.7ms | Allocations: 8960)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 32)
+  Rendered layout layouts/application.erb (Duration: 84.3ms | Allocations: 30478)
+Completed 200 OK in 113ms (Views: 84.4ms | ActiveRecord: 2.8ms | Allocations: 38463)
+
+
+Started GET "/labs/new" for 127.0.0.1 at 2023-09-16 20:38:46 +0300
+Processing by LabsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/new.slim within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/labs/new.slim:5:in `map'
+  Rendered labs/new.slim within layouts/application (Duration: 59.4ms | Allocations: 33957)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 30)
+  Rendered layout layouts/application.erb (Duration: 84.2ms | Allocations: 39963)
+Completed 200 OK in 89ms (Views: 85.0ms | ActiveRecord: 0.4ms | Allocations: 41733)
+
+
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (first_name IS NULL or last_name IS NULL)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs" WHERE "labs"."user_id" = ?[0m  [["user_id", 5]]
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 5]]
+  [1m[36mTRANSACTION (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLab Load (0.3ms)[0m  [1m[34mSELECT "labs".* FROM "labs" WHERE "labs"."user_id" = ?[0m  [["user_id", 6]]
+  [1m[36mUser Destroy (0.4ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 6]]
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs" WHERE "labs"."user_id" = ?[0m  [["user_id", 8]]
+  [1m[36mUser Destroy (0.5ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 8]]
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/labs/new" for 127.0.0.1 at 2023-09-16 20:40:16 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LabsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 401 Unauthorized in 18ms (ActiveRecord: 0.9ms | Allocations: 6633)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 20:40:16 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.0ms | Allocations: 745)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 83.1ms | Allocations: 29517)
+  Rendered shared/_flash.erb (Duration: 0.6ms | Allocations: 192)
+  Rendered layout layouts/application.erb (Duration: 178.0ms | Allocations: 80654)
+Completed 200 OK in 204ms (Views: 186.3ms | ActiveRecord: 0.0ms | Allocations: 89360)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-09-16 20:40:25 +0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"1@1.1", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "1@1.1"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 17ms (ActiveRecord: 0.5ms | Allocations: 2002)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"1@1.1", "password"=>"[FILTERED]", "remember_me"=>"1"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 133)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 54.4ms | Allocations: 20669)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered layout layouts/application.erb (Duration: 62.8ms | Allocations: 26655)
+Completed 200 OK in 304ms (Views: 63.7ms | ActiveRecord: 0.0ms | Allocations: 27970)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-16 20:40:30 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 169)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 29.4ms | Allocations: 23262)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.erb (Duration: 39.5ms | Allocations: 29393)
+Completed 200 OK in 44ms (Views: 42.1ms | ActiveRecord: 0.0ms | Allocations: 30676)
+
+
+Started GET "/labs" for 127.0.0.1 at 2023-09-16 20:47:04 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+Completed 401 Unauthorized in 21ms (ActiveRecord: 1.0ms | Allocations: 7869)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 20:47:04 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 745)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 72.8ms | Allocations: 29517)
+  Rendered shared/_flash.erb (Duration: 0.7ms | Allocations: 191)
+  Rendered layout layouts/application.erb (Duration: 179.3ms | Allocations: 80401)
+Completed 200 OK in 201ms (Views: 186.7ms | ActiveRecord: 0.0ms | Allocations: 89138)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-16 20:47:06 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 169)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 81.7ms | Allocations: 23249)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.erb (Duration: 91.7ms | Allocations: 29369)
+Completed 200 OK in 102ms (Views: 97.5ms | ActiveRecord: 0.0ms | Allocations: 30698)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-09-16 20:47:39 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Пыры", "last_name"=>"Тыры", "email"=>"1@1.1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :first_name, :last_name. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007fc7f158f6e0>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Пыры", "last_name"=>"Тыры", "email"=>"1@1.1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "1@1.1"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", nil], ["last_name", nil], ["email", "1@1.1"], ["created_at", "2023-09-16 17:47:39.904026"], ["updated_at", "2023-09-16 17:47:39.904026"], ["encrypted_password", "$2a$12$11R6nNaDFI1IRMEr4A2wU.oBAmfU9rpEtWT2ntpl7ZnGA7jIUbPoW"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/labs
+Completed 303 See Other in 276ms (ActiveRecord: 6.7ms | Allocations: 9341)
+
+
+Started GET "/labs" for 127.0.0.1 at 2023-09-16 20:47:39 +0300
+Processing by LabsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 61.0ms | Allocations: 25495)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 40)
+  Rendered layout layouts/application.erb (Duration: 71.6ms | Allocations: 31717)
+Completed 200 OK in 90ms (Views: 73.0ms | ActiveRecord: 1.7ms | Allocations: 36268)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-16 20:47:45 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1616)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 20:47:45 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 15.3ms | Allocations: 2380)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered layout layouts/application.erb (Duration: 24.4ms | Allocations: 8334)
+Completed 200 OK in 28ms (Views: 24.6ms | ActiveRecord: 0.5ms | Allocations: 9905)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 20:47:48 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (6.0ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 13.8ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 26.1ms | Allocations: 8211)
+Completed 200 OK in 31ms (Views: 20.9ms | ActiveRecord: 6.4ms | Allocations: 9741)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/users" for 127.0.0.1 at 2023-09-16 20:48:18 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"", "last_name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[31mUnpermitted parameters: :first_name, :last_name. Context: { controller: Devise::RegistrationsController, action: create, request: #<ActionDispatch::Request:0x00007fc7f1665da8>, params: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"", "last_name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up", "controller"=>"devise/registrations", "action"=>"create"} }[0m
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 79)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 26.7ms | Allocations: 25397)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.erb (Duration: 35.4ms | Allocations: 31298)
+Completed 422 Unprocessable Entity in 40ms (Views: 36.0ms | ActiveRecord: 0.0ms | Allocations: 33335)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs" WHERE "labs"."user_id" = ?[0m  [["user_id", 9]]
+  [1m[36mUser Destroy (0.2ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 9]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2023-09-16 20:49:25 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+Completed 401 Unauthorized in 14ms (ActiveRecord: 2.4ms | Allocations: 3612)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 20:49:25 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 161)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 24.2ms | Allocations: 20743)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 37)
+  Rendered layout layouts/application.erb (Duration: 47.3ms | Allocations: 42180)
+Completed 200 OK in 55ms (Views: 49.3ms | ActiveRecord: 0.0ms | Allocations: 45482)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-16 20:49:26 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 104)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 39.8ms | Allocations: 22373)
+  Rendered shared/_flash.erb (Duration: 0.2ms | Allocations: 29)
+  Rendered layout layouts/application.erb (Duration: 52.7ms | Allocations: 28492)
+Completed 200 OK in 56ms (Views: 54.7ms | ActiveRecord: 0.0ms | Allocations: 29639)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-09-16 20:49:32 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"SKAJI+", "last_name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 79)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 39.1ms | Allocations: 25076)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.erb (Duration: 48.8ms | Allocations: 30972)
+Completed 422 Unprocessable Entity in 53ms (Views: 49.7ms | ActiveRecord: 0.0ms | Allocations: 33252)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-09-16 20:49:51 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"SKAJI", "last_name"=>"shto", "email"=>"1@1.1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "1@1.1"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "SKAJI"], ["last_name", "shto"], ["email", "1@1.1"], ["created_at", "2023-09-16 17:49:51.368438"], ["updated_at", "2023-09-16 17:49:51.368438"], ["encrypted_password", "$2a$12$aZ34VNYC7XfZePtzXAK80uvxketd26CyCikPqXECLBfCAgffQyqQO"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 341ms (ActiveRecord: 5.5ms | Allocations: 6003)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 20:49:51 +0300
+Processing by LabsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 12.7ms | Allocations: 5483)
+  Rendered shared/_flash.erb (Duration: 0.2ms | Allocations: 40)
+  Rendered layout layouts/application.erb (Duration: 26.4ms | Allocations: 11688)
+Completed 200 OK in 38ms (Views: 26.7ms | ActiveRecord: 1.2ms | Allocations: 15430)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs" WHERE "labs"."user_id" = ?[0m  [["user_id", 10]]
+  [1m[36mUser Destroy (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 10]]
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-16 20:50:58 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 106)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 39.8ms | Allocations: 22418)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.erb (Duration: 68.4ms | Allocations: 43859)
+Completed 200 OK in 79ms (Views: 70.6ms | ActiveRecord: 1.4ms | Allocations: 47949)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-16 20:51:03 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 106)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 21.1ms | Allocations: 22401)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.erb (Duration: 44.4ms | Allocations: 43717)
+Completed 200 OK in 56ms (Views: 46.5ms | ActiveRecord: 1.3ms | Allocations: 47883)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-16 20:51:05 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 79)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 19.2ms | Allocations: 21815)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.erb (Duration: 26.5ms | Allocations: 27609)
+Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.0ms | Allocations: 28274)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-09-16 20:51:07 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"", "last_name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 79)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 26.8ms | Allocations: 25066)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.erb (Duration: 34.4ms | Allocations: 30860)
+Completed 422 Unprocessable Entity in 38ms (Views: 35.0ms | ActiveRecord: 0.0ms | Allocations: 33064)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-09-16 20:51:11 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"", "last_name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 79)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 43.0ms | Allocations: 25050)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.erb (Duration: 52.0ms | Allocations: 30946)
+Completed 422 Unprocessable Entity in 56ms (Views: 53.0ms | ActiveRecord: 0.0ms | Allocations: 32772)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-16 20:51:18 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 106)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 19.7ms | Allocations: 22401)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.erb (Duration: 37.2ms | Allocations: 43814)
+Completed 200 OK in 44ms (Views: 38.4ms | ActiveRecord: 0.6ms | Allocations: 47974)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-09-16 20:51:20 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"", "last_name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 79)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 28.6ms | Allocations: 27347)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.erb (Duration: 37.0ms | Allocations: 33159)
+Completed 422 Unprocessable Entity in 41ms (Views: 37.8ms | ActiveRecord: 0.0ms | Allocations: 35476)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-16 20:52:22 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 498)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 21.6ms | Allocations: 22873)
+  Rendered shared/_flash.erb (Duration: 0.5ms | Allocations: 175)
+  Rendered layout layouts/application.erb (Duration: 30.4ms | Allocations: 29402)
+Completed 200 OK in 33ms (Views: 32.3ms | ActiveRecord: 0.0ms | Allocations: 30716)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-16 20:52:32 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 496)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 32.5ms | Allocations: 22882)
+  Rendered shared/_flash.erb (Duration: 0.5ms | Allocations: 175)
+  Rendered layout layouts/application.erb (Duration: 41.1ms | Allocations: 29513)
+Completed 200 OK in 44ms (Views: 43.1ms | ActiveRecord: 0.0ms | Allocations: 30915)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-16 20:52:53 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 493)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 26.7ms | Allocations: 22870)
+  Rendered shared/_flash.erb (Duration: 0.5ms | Allocations: 175)
+  Rendered layout layouts/application.erb (Duration: 35.6ms | Allocations: 29399)
+Completed 200 OK in 39ms (Views: 38.1ms | ActiveRecord: 0.0ms | Allocations: 30788)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-16 20:53:20 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 493)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 21.0ms | Allocations: 22867)
+  Rendered shared/_flash.erb (Duration: 0.6ms | Allocations: 175)
+  Rendered layout layouts/application.erb (Duration: 30.1ms | Allocations: 29471)
+Completed 200 OK in 33ms (Views: 32.2ms | ActiveRecord: 0.0ms | Allocations: 30866)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-16 20:53:22 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 79)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 23.0ms | Allocations: 21815)
+  Rendered shared/_flash.erb (Duration: 0.2ms | Allocations: 20)
+  Rendered layout layouts/application.erb (Duration: 32.0ms | Allocations: 27614)
+Completed 200 OK in 34ms (Views: 32.8ms | ActiveRecord: 0.0ms | Allocations: 28265)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-16 20:53:22 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 79)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 23.6ms | Allocations: 21815)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.erb (Duration: 32.1ms | Allocations: 27627)
+Completed 200 OK in 34ms (Views: 33.1ms | ActiveRecord: 0.0ms | Allocations: 28200)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-16 20:53:23 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 79)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 27.3ms | Allocations: 21824)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.erb (Duration: 36.0ms | Allocations: 27720)
+Completed 200 OK in 38ms (Views: 37.0ms | ActiveRecord: 0.0ms | Allocations: 28279)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-16 20:53:23 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 79)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 24.1ms | Allocations: 21832)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.erb (Duration: 33.0ms | Allocations: 27728)
+Completed 200 OK in 35ms (Views: 33.8ms | ActiveRecord: 0.0ms | Allocations: 28300)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-16 20:53:23 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 79)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 23.6ms | Allocations: 21815)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.erb (Duration: 31.7ms | Allocations: 27609)
+Completed 200 OK in 34ms (Views: 32.4ms | ActiveRecord: 0.0ms | Allocations: 28167)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-16 20:53:24 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 79)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 26.1ms | Allocations: 21817)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.erb (Duration: 35.4ms | Allocations: 27686)
+Completed 200 OK in 37ms (Views: 36.2ms | ActiveRecord: 0.0ms | Allocations: 28256)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-16 20:54:01 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 493)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 25.4ms | Allocations: 22875)
+  Rendered shared/_flash.erb (Duration: 0.6ms | Allocations: 175)
+  Rendered layout layouts/application.erb (Duration: 36.1ms | Allocations: 29408)
+Completed 200 OK in 40ms (Views: 38.6ms | ActiveRecord: 0.0ms | Allocations: 30710)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 20:54:18 +0300
+Processing by LabsController#index as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 456)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 20:54:18 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 161)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 30.6ms | Allocations: 20978)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 37)
+  Rendered layout layouts/application.erb (Duration: 40.6ms | Allocations: 27104)
+Completed 200 OK in 45ms (Views: 42.8ms | ActiveRecord: 0.0ms | Allocations: 28494)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-09-16 20:54:25 +0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 487)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 22.8ms | Allocations: 20457)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered layout layouts/application.erb (Duration: 34.3ms | Allocations: 26332)
+Completed 200 OK in 38ms (Views: 35.6ms | ActiveRecord: 0.0ms | Allocations: 26855)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-16 20:54:26 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 79)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 23.8ms | Allocations: 21844)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.erb (Duration: 31.8ms | Allocations: 27738)
+Completed 200 OK in 33ms (Views: 32.5ms | ActiveRecord: 0.0ms | Allocations: 28309)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-09-16 20:54:42 +0300
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Hellow", "last_name"=>"World", "email"=>"1@1.1", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "1@1.1"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.7ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Hellow"], ["last_name", "World"], ["email", "1@1.1"], ["created_at", "2023-09-16 17:54:42.728478"], ["updated_at", "2023-09-16 17:54:42.728478"], ["encrypted_password", "$2a$12$TaP/HJZ4KUkDaBIpeObBp.HhzWmdlcx.yY.teg8Y5wGnNTGbEVBrm"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (6.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 266ms (ActiveRecord: 7.9ms | Allocations: 6375)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 20:54:42 +0300
+Processing by LabsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.4ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 21.6ms | Allocations: 13266)
+  Rendered shared/_flash.erb (Duration: 0.2ms | Allocations: 40)
+  Rendered layout layouts/application.erb (Duration: 32.7ms | Allocations: 19394)
+Completed 200 OK in 47ms (Views: 33.5ms | ActiveRecord: 1.8ms | Allocations: 23531)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 20:54:47 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 5.2ms | Allocations: 2369)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 12.2ms | Allocations: 8263)
+Completed 200 OK in 16ms (Views: 12.5ms | ActiveRecord: 0.6ms | Allocations: 9901)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 20:54:51 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.3ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 5.3ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 14.1ms | Allocations: 8209)
+Completed 200 OK in 18ms (Views: 14.6ms | ActiveRecord: 0.8ms | Allocations: 9767)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 20:54:51 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 5.4ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 13.2ms | Allocations: 8214)
+Completed 200 OK in 17ms (Views: 13.4ms | ActiveRecord: 0.5ms | Allocations: 9754)
+
+
+Started GET "/labs/new" for 127.0.0.1 at 2023-09-16 20:54:52 +0300
+Processing by LabsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/new.slim within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/labs/new.slim:5:in `map'
+  Rendered labs/new.slim within layouts/application (Duration: 53.3ms | Allocations: 28951)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 30)
+  Rendered layout layouts/application.erb (Duration: 64.5ms | Allocations: 35055)
+Completed 200 OK in 69ms (Views: 65.3ms | ActiveRecord: 0.5ms | Allocations: 36693)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 20:55:11 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 4.9ms | Allocations: 2405)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 13.8ms | Allocations: 8249)
+Completed 200 OK in 18ms (Views: 14.1ms | ActiveRecord: 0.5ms | Allocations: 9971)
+
+
+Started GET "/labs/7/grade" for 127.0.0.1 at 2023-09-16 20:55:23 +0300
+Processing by LabsController#grade as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs" WHERE "labs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/labs_controller.rb:43:in `set_lab'
+  Rendering layout layouts/application.erb
+  Rendering labs/grade.slim within layouts/application
+  Rendered labs/grade.slim within layouts/application (Duration: 14.3ms | Allocations: 11281)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 23.0ms | Allocations: 17218)
+Completed 200 OK in 31ms (Views: 24.0ms | ActiveRecord: 0.4ms | Allocations: 19987)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 20:55:26 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 6.4ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 15.9ms | Allocations: 8209)
+Completed 200 OK in 20ms (Views: 16.7ms | ActiveRecord: 0.6ms | Allocations: 9761)
+
+
+Started GET "/labs/new" for 127.0.0.1 at 2023-09-16 20:55:36 +0300
+Processing by LabsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/new.slim within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/labs/new.slim:5:in `map'
+  Rendered labs/new.slim within layouts/application (Duration: 23.0ms | Allocations: 20837)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 32.8ms | Allocations: 26780)
+Completed 200 OK in 37ms (Views: 33.5ms | ActiveRecord: 0.5ms | Allocations: 28326)
+
+
+Started POST "/labs" for 127.0.0.1 at 2023-09-16 20:55:43 +0300
+Processing by LabsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "lab"=>{"title"=>"daea", "description"=>"fdasdf", "user_id"=>"3"}, "commit"=>"Save"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/labs_controller.rb:23:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/labs_controller.rb:23:in `create'
+  [1m[36mLab Create (0.3ms)[0m  [1m[32mINSERT INTO "labs" ("title", "description", "grade", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "daea"], ["description", "fdasdf"], ["grade", nil], ["created_at", "2023-09-16 17:55:43.234939"], ["updated_at", "2023-09-16 17:55:43.234939"], ["user_id", 3]]
+  ↳ app/controllers/labs_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (5.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/labs_controller.rb:23:in `create'
+Redirected to http://127.0.0.1:3000/labs
+Completed 302 Found in 27ms (ActiveRecord: 6.1ms | Allocations: 8224)
+
+
+Started GET "/labs" for 127.0.0.1 at 2023-09-16 20:55:43 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 7.9ms | Allocations: 2631)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 27)
+  Rendered layout layouts/application.erb (Duration: 18.4ms | Allocations: 8679)
+Completed 200 OK in 22ms (Views: 18.8ms | ActiveRecord: 0.5ms | Allocations: 10363)
+
+
+Started GET "/labs/8/grade" for 127.0.0.1 at 2023-09-16 20:55:50 +0300
+Processing by LabsController#grade as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs" WHERE "labs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/labs_controller.rb:43:in `set_lab'
+  Rendering layout layouts/application.erb
+  Rendering labs/grade.slim within layouts/application
+  Rendered labs/grade.slim within layouts/application (Duration: 8.2ms | Allocations: 7383)
+  Rendered shared/_flash.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 17.3ms | Allocations: 13218)
+Completed 200 OK in 23ms (Views: 18.1ms | ActiveRecord: 0.2ms | Allocations: 15222)
+
+
+Started GET "/labs" for 127.0.0.1 at 2023-09-16 20:55:52 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 6.0ms | Allocations: 2568)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 16.3ms | Allocations: 8416)
+Completed 200 OK in 20ms (Views: 16.7ms | ActiveRecord: 0.5ms | Allocations: 9938)
+
+
+Started GET "/labs/8/grade" for 127.0.0.1 at 2023-09-16 20:55:55 +0300
+Processing by LabsController#grade as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs" WHERE "labs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/labs_controller.rb:43:in `set_lab'
+  Rendering layout layouts/application.erb
+  Rendering labs/grade.slim within layouts/application
+  Rendered labs/grade.slim within layouts/application (Duration: 8.0ms | Allocations: 7253)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 25.1ms | Allocations: 13098)
+Completed 200 OK in 32ms (Views: 26.5ms | ActiveRecord: 0.4ms | Allocations: 15084)
+
+
+Started PATCH "/labs/8/mark" for 127.0.0.1 at 2023-09-16 20:55:57 +0300
+Processing by LabsController#mark as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "lab"=>{"grade"=>"e"}, "commit"=>"Save", "id"=>"8"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs" WHERE "labs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/labs_controller.rb:43:in `set_lab'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/labs_controller.rb:33:in `mark'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/labs_controller.rb:33:in `mark'
+  [1m[36mLab Update (0.2ms)[0m  [1m[33mUPDATE "labs" SET "grade" = ?, "updated_at" = ? WHERE "labs"."id" = ?[0m  [["grade", 4], ["updated_at", "2023-09-16 17:55:57.392064"], ["id", 8]]
+  ↳ app/controllers/labs_controller.rb:33:in `mark'
+  [1m[36mTRANSACTION (4.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/labs_controller.rb:33:in `mark'
+Redirected to http://127.0.0.1:3000/labs
+Completed 302 Found in 17ms (ActiveRecord: 5.4ms | Allocations: 5006)
+
+
+Started GET "/labs" for 127.0.0.1 at 2023-09-16 20:55:57 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 5.2ms | Allocations: 2514)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.erb (Duration: 13.8ms | Allocations: 8463)
+Completed 200 OK in 18ms (Views: 13.9ms | ActiveRecord: 0.6ms | Allocations: 10036)
+
+
+Started DELETE "/labs/8" for 127.0.0.1 at 2023-09-16 20:56:00 +0300
+Processing by LabsController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs" WHERE "labs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/labs_controller.rb:43:in `set_lab'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/labs_controller.rb:10:in `destroy'
+  [1m[36mLab Destroy (0.2ms)[0m  [1m[31mDELETE FROM "labs" WHERE "labs"."id" = ?[0m  [["id", 8]]
+  ↳ app/controllers/labs_controller.rb:10:in `destroy'
+  [1m[36mTRANSACTION (6.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/labs_controller.rb:10:in `destroy'
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 22)
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 6.9ms | Allocations: 4300)
+
+
+Started GET "/labs/new" for 127.0.0.1 at 2023-09-16 20:56:04 +0300
+Processing by LabsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/new.slim within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/labs/new.slim:5:in `map'
+  Rendered labs/new.slim within layouts/application (Duration: 19.8ms | Allocations: 21016)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 27.9ms | Allocations: 27070)
+Completed 200 OK in 32ms (Views: 28.7ms | ActiveRecord: 0.3ms | Allocations: 28793)
+
+
+Started POST "/labs" for 127.0.0.1 at 2023-09-16 20:56:08 +0300
+Processing by LabsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "lab"=>{"title"=>"re", "description"=>"r", "user_id"=>"7"}, "commit"=>"Save"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/labs_controller.rb:23:in `create'
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/labs_controller.rb:23:in `create'
+  [1m[36mLab Create (0.4ms)[0m  [1m[32mINSERT INTO "labs" ("title", "description", "grade", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "re"], ["description", "r"], ["grade", nil], ["created_at", "2023-09-16 17:56:08.910294"], ["updated_at", "2023-09-16 17:56:08.910294"], ["user_id", 7]]
+  ↳ app/controllers/labs_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (5.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/labs_controller.rb:23:in `create'
+Redirected to http://127.0.0.1:3000/labs
+Completed 302 Found in 18ms (ActiveRecord: 6.6ms | Allocations: 4400)
+
+
+Started GET "/labs" for 127.0.0.1 at 2023-09-16 20:56:08 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 2], ["id", 3], ["id", 7]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 6.4ms | Allocations: 2626)
+  Rendered shared/_flash.erb (Duration: 0.2ms | Allocations: 25)
+  Rendered layout layouts/application.erb (Duration: 17.7ms | Allocations: 8474)
+Completed 200 OK in 22ms (Views: 18.0ms | ActiveRecord: 0.7ms | Allocations: 10056)
+
+
+Started GET "/labs/8/grade" for 127.0.0.1 at 2023-09-16 20:56:13 +0300
+Processing by LabsController#grade as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs" WHERE "labs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/labs_controller.rb:43:in `set_lab'
+  Rendering layout layouts/application.erb
+  Rendering labs/grade.slim within layouts/application
+  Rendered labs/grade.slim within layouts/application (Duration: 8.0ms | Allocations: 7261)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 16.4ms | Allocations: 13174)
+Completed 200 OK in 22ms (Views: 17.6ms | ActiveRecord: 0.3ms | Allocations: 15190)
+
+
+Started GET "/labs" for 127.0.0.1 at 2023-09-16 20:56:14 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 2], ["id", 3], ["id", 7]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 5.2ms | Allocations: 2595)
+  Rendered shared/_flash.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 14.8ms | Allocations: 8442)
+Completed 200 OK in 19ms (Views: 15.2ms | ActiveRecord: 0.5ms | Allocations: 9978)
+
+
+Started DELETE "/labs/8" for 127.0.0.1 at 2023-09-16 20:56:17 +0300
+Processing by LabsController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs" WHERE "labs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/labs_controller.rb:43:in `set_lab'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/labs_controller.rb:10:in `destroy'
+  [1m[36mLab Destroy (0.3ms)[0m  [1m[31mDELETE FROM "labs" WHERE "labs"."id" = ?[0m  [["id", 8]]
+  ↳ app/controllers/labs_controller.rb:10:in `destroy'
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/labs_controller.rb:10:in `destroy'
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 15)
+Completed 200 OK in 16ms (Views: 0.1ms | ActiveRecord: 7.1ms | Allocations: 3646)
+
+
+Started GET "/labs/new" for 127.0.0.1 at 2023-09-16 20:56:18 +0300
+Processing by LabsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/new.slim within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/labs/new.slim:5:in `map'
+  Rendered labs/new.slim within layouts/application (Duration: 22.4ms | Allocations: 20805)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 31.2ms | Allocations: 26659)
+Completed 200 OK in 35ms (Views: 31.7ms | ActiveRecord: 0.3ms | Allocations: 28200)
+
+
+Started GET "/labs/new" for 127.0.0.1 at 2023-09-16 20:57:24 +0300
+Processing by LabsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/new.slim within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/labs/new.slim:5:in `map'
+  Rendered labs/new.slim within layouts/application (Duration: 25.6ms | Allocations: 21448)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 32)
+  Rendered layout layouts/application.erb (Duration: 50.0ms | Allocations: 42943)
+Completed 200 OK in 75ms (Views: 51.2ms | ActiveRecord: 1.6ms | Allocations: 52863)
+
+
+Started GET "/labs" for 127.0.0.1 at 2023-09-16 20:58:18 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 6.8ms | Allocations: 3281)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 15.4ms | Allocations: 9184)
+Completed 200 OK in 20ms (Views: 15.7ms | ActiveRecord: 0.6ms | Allocations: 10927)
+
+
+Started GET "/labs/7/grade" for 127.0.0.1 at 2023-09-16 20:58:21 +0300
+Processing by LabsController#grade as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs" WHERE "labs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/labs_controller.rb:43:in `set_lab'
+  Rendering layout layouts/application.erb
+  Rendering labs/grade.slim within layouts/application
+  Rendered labs/grade.slim within layouts/application (Duration: 9.7ms | Allocations: 7199)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 19.0ms | Allocations: 13130)
+Completed 200 OK in 25ms (Views: 19.6ms | ActiveRecord: 0.3ms | Allocations: 15748)
+
+
+Started GET "/labs" for 127.0.0.1 at 2023-09-16 20:58:23 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 5.1ms | Allocations: 2369)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 12.5ms | Allocations: 8281)
+Completed 200 OK in 16ms (Views: 12.5ms | ActiveRecord: 0.7ms | Allocations: 9808)
+
+
+Started GET "/labs/6/grade" for 127.0.0.1 at 2023-09-16 20:58:35 +0300
+Processing by LabsController#grade as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs" WHERE "labs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/labs_controller.rb:43:in `set_lab'
+  Rendering layout layouts/application.erb
+  Rendering labs/grade.slim within layouts/application
+  Rendered labs/grade.slim within layouts/application (Duration: 9.4ms | Allocations: 7252)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 18.1ms | Allocations: 13087)
+Completed 200 OK in 23ms (Views: 18.7ms | ActiveRecord: 0.4ms | Allocations: 15066)
+
+
+Started GET "/labs" for 127.0.0.1 at 2023-09-16 20:58:39 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 5.2ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 15.2ms | Allocations: 8220)
+Completed 200 OK in 19ms (Views: 15.7ms | ActiveRecord: 0.5ms | Allocations: 9757)
+
+
+Started GET "/labs" for 127.0.0.1 at 2023-09-16 21:00:14 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 17.5ms | Allocations: 13180)
+  Rendered shared/_flash.erb (Duration: 0.7ms | Allocations: 179)
+  Rendered layout layouts/application.erb (Duration: 42.0ms | Allocations: 35268)
+Completed 200 OK in 65ms (Views: 43.3ms | ActiveRecord: 1.8ms | Allocations: 43734)
+
+
+Started GET "/labs" for 127.0.0.1 at 2023-09-16 21:00:53 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 13.5ms | Allocations: 10377)
+  Rendered shared/_flash.erb (Duration: 0.6ms | Allocations: 178)
+  Rendered layout layouts/application.erb (Duration: 23.8ms | Allocations: 17073)
+Completed 200 OK in 30ms (Views: 25.7ms | ActiveRecord: 0.5ms | Allocations: 19369)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-09-16 21:00:57 +0300
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 7ms (ActiveRecord: 0.1ms | Allocations: 2990)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:00:57 +0300
+Processing by LabsController#index as TURBO_STREAM
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 357)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 21:00:57 +0300
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 562)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 23.4ms | Allocations: 21508)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 37)
+  Rendered layout layouts/application.erb (Duration: 31.3ms | Allocations: 27631)
+Completed 200 OK in 35ms (Views: 33.5ms | ActiveRecord: 0.0ms | Allocations: 28887)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-16 21:01:05 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 104)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 35.9ms | Allocations: 22696)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.erb (Duration: 44.3ms | Allocations: 28812)
+Completed 200 OK in 48ms (Views: 46.6ms | ActiveRecord: 0.0ms | Allocations: 30127)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 21:01:10 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.4ms | Allocations: 131)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 23.0ms | Allocations: 20452)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.erb (Duration: 30.9ms | Allocations: 26344)
+Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.0ms | Allocations: 27046)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 21:01:58 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 544)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 29.2ms | Allocations: 21438)
+  Rendered shared/_flash.erb (Duration: 0.8ms | Allocations: 175)
+  Rendered layout layouts/application.erb (Duration: 42.0ms | Allocations: 28017)
+Completed 200 OK in 47ms (Views: 45.5ms | ActiveRecord: 0.0ms | Allocations: 29391)
+
+
+Started GET "/users/password/new" for 127.0.0.1 at 2023-09-16 21:02:03 +0300
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 153)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 11.5ms | Allocations: 7890)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.erb (Duration: 20.5ms | Allocations: 13941)
+Completed 200 OK in 23ms (Views: 22.1ms | ActiveRecord: 0.0ms | Allocations: 15202)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 21:02:21 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 100)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 25.2ms | Allocations: 20687)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.erb (Duration: 49.9ms | Allocations: 42122)
+Completed 200 OK in 71ms (Views: 51.6ms | ActiveRecord: 1.2ms | Allocations: 46354)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-16 21:02:24 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 102)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 23.5ms | Allocations: 22694)
+  Rendered shared/_flash.erb (Duration: 0.3ms | Allocations: 29)
+  Rendered layout layouts/application.erb (Duration: 31.6ms | Allocations: 28810)
+Completed 200 OK in 35ms (Views: 33.6ms | ActiveRecord: 0.0ms | Allocations: 30117)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 21:02:26 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 75)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 20.6ms | Allocations: 20396)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.erb (Duration: 28.7ms | Allocations: 26224)
+Completed 200 OK in 31ms (Views: 29.6ms | ActiveRecord: 0.0ms | Allocations: 26934)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-16 21:02:28 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 75)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 31.7ms | Allocations: 21820)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.erb (Duration: 40.5ms | Allocations: 27716)
+Completed 200 OK in 44ms (Views: 41.5ms | ActiveRecord: 0.0ms | Allocations: 28276)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 21:02:28 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 75)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 22.9ms | Allocations: 20397)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.erb (Duration: 32.2ms | Allocations: 26292)
+Completed 200 OK in 35ms (Views: 33.0ms | ActiveRecord: 0.0ms | Allocations: 26922)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-09-16 21:02:35 +0300
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"1@1.1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign up"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "1@1.1"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 258ms (ActiveRecord: 0.2ms | Allocations: 5347)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:02:36 +0300
+Processing by LabsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.6ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 19.0ms | Allocations: 13269)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered layout layouts/application.erb (Duration: 28.1ms | Allocations: 19441)
+Completed 200 OK in 40ms (Views: 28.3ms | ActiveRecord: 1.9ms | Allocations: 23763)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 21:03:10 +0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 1604)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:03:10 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.3ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 13.9ms | Allocations: 10377)
+  Rendered shared/_flash.erb (Duration: 0.9ms | Allocations: 186)
+  Rendered layout layouts/application.erb (Duration: 25.6ms | Allocations: 17052)
+Completed 200 OK in 32ms (Views: 26.9ms | ActiveRecord: 0.9ms | Allocations: 19292)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:03:13 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 5.9ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 14.0ms | Allocations: 8243)
+Completed 200 OK in 18ms (Views: 14.2ms | ActiveRecord: 0.6ms | Allocations: 9874)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-09-16 21:03:15 +0300
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 5ms (ActiveRecord: 0.1ms | Allocations: 2034)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:03:15 +0300
+Processing by LabsController#index as TURBO_STREAM
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 292)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 21:03:15 +0300
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.6ms | Allocations: 491)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 33.0ms | Allocations: 21411)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 36)
+  Rendered layout layouts/application.erb (Duration: 42.7ms | Allocations: 27531)
+Completed 200 OK in 45ms (Views: 44.4ms | ActiveRecord: 0.0ms | Allocations: 28673)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 21:03:18 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 75)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 22.1ms | Allocations: 20396)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.erb (Duration: 30.3ms | Allocations: 26291)
+Completed 200 OK in 32ms (Views: 31.0ms | ActiveRecord: 0.0ms | Allocations: 26994)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 21:03:26 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 75)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 23.1ms | Allocations: 20389)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.erb (Duration: 31.7ms | Allocations: 26246)
+Completed 200 OK in 34ms (Views: 32.9ms | ActiveRecord: 0.0ms | Allocations: 26857)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 21:03:27 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 75)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 22.5ms | Allocations: 20389)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.erb (Duration: 31.1ms | Allocations: 26228)
+Completed 200 OK in 33ms (Views: 31.8ms | ActiveRecord: 0.0ms | Allocations: 26845)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 21:03:47 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 492)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 29.5ms | Allocations: 21444)
+  Rendered shared/_flash.erb (Duration: 0.5ms | Allocations: 175)
+  Rendered layout layouts/application.erb (Duration: 40.0ms | Allocations: 28085)
+Completed 200 OK in 43ms (Views: 42.5ms | ActiveRecord: 0.0ms | Allocations: 29453)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-09-16 21:03:57 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"1@1.1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "1@1.1"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 250ms (ActiveRecord: 0.1ms | Allocations: 2782)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:03:57 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 11.2ms | Allocations: 10393)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 38)
+  Rendered layout layouts/application.erb (Duration: 20.1ms | Allocations: 16557)
+Completed 200 OK in 25ms (Views: 21.2ms | ActiveRecord: 0.5ms | Allocations: 18491)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:05:53 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 12.0ms | Allocations: 10375)
+  Rendered shared/_flash.erb (Duration: 0.6ms | Allocations: 178)
+  Rendered layout layouts/application.erb (Duration: 23.0ms | Allocations: 16999)
+Completed 200 OK in 28ms (Views: 24.7ms | ActiveRecord: 0.5ms | Allocations: 19299)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:07:07 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 12.5ms | Allocations: 10374)
+  Rendered shared/_flash.erb (Duration: 0.6ms | Allocations: 178)
+  Rendered layout layouts/application.erb (Duration: 22.6ms | Allocations: 17031)
+Completed 200 OK in 30ms (Views: 24.7ms | ActiveRecord: 0.5ms | Allocations: 19336)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:07:08 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 6.0ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 14.2ms | Allocations: 8204)
+Completed 200 OK in 18ms (Views: 14.5ms | ActiveRecord: 0.6ms | Allocations: 9852)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:07:42 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 17.8ms | Allocations: 10384)
+  Rendered shared/_flash.erb (Duration: 0.5ms | Allocations: 178)
+  Rendered layout layouts/application.erb (Duration: 27.7ms | Allocations: 17082)
+Completed 200 OK in 34ms (Views: 29.5ms | ActiveRecord: 0.5ms | Allocations: 19268)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:07:43 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 8.9ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 19.5ms | Allocations: 8288)
+Completed 200 OK in 24ms (Views: 19.7ms | ActiveRecord: 0.5ms | Allocations: 9910)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:07:44 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 7.6ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 18.8ms | Allocations: 8220)
+Completed 200 OK in 23ms (Views: 19.2ms | ActiveRecord: 0.6ms | Allocations: 9771)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:08:37 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 11.2ms | Allocations: 10385)
+  Rendered shared/_flash.erb (Duration: 0.6ms | Allocations: 178)
+  Rendered layout layouts/application.erb (Duration: 22.2ms | Allocations: 17053)
+Completed 200 OK in 28ms (Views: 24.1ms | ActiveRecord: 0.5ms | Allocations: 19248)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:08:38 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 6.0ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.2ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 15.1ms | Allocations: 8226)
+Completed 200 OK in 19ms (Views: 15.5ms | ActiveRecord: 0.6ms | Allocations: 9835)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:09:06 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 13.8ms | Allocations: 10374)
+  Rendered shared/_flash.erb (Duration: 0.9ms | Allocations: 178)
+  Rendered layout layouts/application.erb (Duration: 24.8ms | Allocations: 17013)
+Completed 200 OK in 30ms (Views: 26.0ms | ActiveRecord: 0.5ms | Allocations: 19206)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:09:27 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 10.7ms | Allocations: 10375)
+  Rendered shared/_flash.erb (Duration: 0.6ms | Allocations: 179)
+  Rendered layout layouts/application.erb (Duration: 24.4ms | Allocations: 16998)
+Completed 200 OK in 29ms (Views: 25.7ms | ActiveRecord: 0.4ms | Allocations: 19318)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:10:34 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 11.2ms | Allocations: 10395)
+  Rendered shared/_flash.erb (Duration: 0.8ms | Allocations: 178)
+  Rendered layout layouts/application.erb (Duration: 20.8ms | Allocations: 17088)
+Completed 200 OK in 26ms (Views: 22.5ms | ActiveRecord: 0.4ms | Allocations: 19379)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:11:40 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 13.2ms | Allocations: 10375)
+  Rendered shared/_flash.erb (Duration: 0.5ms | Allocations: 179)
+  Rendered layout layouts/application.erb (Duration: 23.5ms | Allocations: 17069)
+Completed 200 OK in 30ms (Views: 24.8ms | ActiveRecord: 0.7ms | Allocations: 19384)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:11:41 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 7.5ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 22.3ms | Allocations: 8214)
+Completed 200 OK in 27ms (Views: 22.7ms | ActiveRecord: 0.6ms | Allocations: 9854)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:11:46 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 10.4ms | Allocations: 10394)
+  Rendered shared/_flash.erb (Duration: 0.8ms | Allocations: 178)
+  Rendered layout layouts/application.erb (Duration: 20.1ms | Allocations: 17026)
+Completed 200 OK in 26ms (Views: 21.6ms | ActiveRecord: 0.5ms | Allocations: 19244)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:11:46 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 7.4ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 17.6ms | Allocations: 8210)
+Completed 200 OK in 23ms (Views: 18.3ms | ActiveRecord: 0.6ms | Allocations: 9830)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:12:12 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 11.4ms | Allocations: 10375)
+  Rendered shared/_flash.erb (Duration: 0.8ms | Allocations: 179)
+  Rendered layout layouts/application.erb (Duration: 28.0ms | Allocations: 17015)
+Completed 200 OK in 33ms (Views: 29.5ms | ActiveRecord: 0.4ms | Allocations: 19219)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:12:16 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 5.6ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 14.2ms | Allocations: 8203)
+Completed 200 OK in 18ms (Views: 14.2ms | ActiveRecord: 0.6ms | Allocations: 9846)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:12:17 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 6.4ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 15.7ms | Allocations: 8305)
+Completed 200 OK in 20ms (Views: 16.0ms | ActiveRecord: 0.5ms | Allocations: 9844)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:12:32 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 5.4ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 14.8ms | Allocations: 8204)
+Completed 200 OK in 19ms (Views: 15.0ms | ActiveRecord: 0.6ms | Allocations: 9744)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:12:35 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 5.2ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 12.4ms | Allocations: 8279)
+Completed 200 OK in 16ms (Views: 12.5ms | ActiveRecord: 0.7ms | Allocations: 9802)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:13:08 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 13.0ms | Allocations: 10396)
+  Rendered shared/_flash.erb (Duration: 0.8ms | Allocations: 178)
+  Rendered layout layouts/application.erb (Duration: 23.2ms | Allocations: 17029)
+Completed 200 OK in 29ms (Views: 24.4ms | ActiveRecord: 0.6ms | Allocations: 19234)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:13:09 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 6.2ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 14.5ms | Allocations: 8219)
+Completed 200 OK in 19ms (Views: 14.8ms | ActiveRecord: 0.5ms | Allocations: 9833)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:13:24 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 12.2ms | Allocations: 10394)
+  Rendered shared/_flash.erb (Duration: 0.7ms | Allocations: 179)
+  Rendered layout layouts/application.erb (Duration: 22.0ms | Allocations: 17045)
+Completed 200 OK in 28ms (Views: 23.5ms | ActiveRecord: 0.6ms | Allocations: 19255)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:13:50 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 16.6ms | Allocations: 10396)
+  Rendered shared/_flash.erb (Duration: 0.9ms | Allocations: 178)
+  Rendered layout layouts/application.erb (Duration: 30.9ms | Allocations: 17089)
+Completed 200 OK in 39ms (Views: 33.6ms | ActiveRecord: 0.7ms | Allocations: 19375)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:14:41 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 10.8ms | Allocations: 10375)
+  Rendered shared/_flash.erb (Duration: 0.5ms | Allocations: 178)
+  Rendered layout layouts/application.erb (Duration: 20.5ms | Allocations: 17068)
+Completed 200 OK in 25ms (Views: 21.5ms | ActiveRecord: 0.5ms | Allocations: 19389)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:14:58 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 5.1ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 12.3ms | Allocations: 8280)
+Completed 200 OK in 16ms (Views: 12.8ms | ActiveRecord: 0.4ms | Allocations: 9924)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:15:24 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 13.4ms | Allocations: 10395)
+  Rendered shared/_flash.erb (Duration: 1.1ms | Allocations: 178)
+  Rendered layout layouts/application.erb (Duration: 25.4ms | Allocations: 17061)
+Completed 200 OK in 32ms (Views: 27.9ms | ActiveRecord: 0.6ms | Allocations: 19260)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:15:35 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 6.7ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 14.9ms | Allocations: 8221)
+Completed 200 OK in 19ms (Views: 15.0ms | ActiveRecord: 0.6ms | Allocations: 9841)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-09-16 21:15:39 +0300
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 5ms (ActiveRecord: 0.1ms | Allocations: 1875)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:15:39 +0300
+Processing by LabsController#index as TURBO_STREAM
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 291)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 21:15:39 +0300
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.1ms | Allocations: 490)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 30.0ms | Allocations: 21450)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 36)
+  Rendered layout layouts/application.erb (Duration: 39.1ms | Allocations: 27559)
+Completed 200 OK in 42ms (Views: 41.0ms | ActiveRecord: 0.0ms | Allocations: 28698)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2023-09-16 21:15:41 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 88)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 29.0ms | Allocations: 22473)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered layout layouts/application.erb (Duration: 39.1ms | Allocations: 28575)
+Completed 200 OK in 43ms (Views: 41.4ms | ActiveRecord: 0.0ms | Allocations: 29641)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-09-16 21:15:41 +0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"", "last_name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 75)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 29.8ms | Allocations: 27326)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 20)
+  Rendered layout layouts/application.erb (Duration: 39.6ms | Allocations: 33216)
+Completed 422 Unprocessable Entity in 44ms (Views: 40.3ms | ActiveRecord: 0.0ms | Allocations: 35726)
+
+
+Started POST "/users" for 127.0.0.1 at 2023-09-16 21:15:48 +0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"fdsf", "last_name"=>"fsdfsd", "email"=>"2@2.2", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "2@2.2"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "fdsf"], ["last_name", "fsdfsd"], ["email", "2@2.2"], ["created_at", "2023-09-16 18:15:48.471432"], ["updated_at", "2023-09-16 18:15:48.471432"], ["encrypted_password", "$2a$12$VaXtAJqEMpWGtp9nvDHelOeKitCV03r4YQ9Kxg9/XrOmqlMfMyKjy"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (7.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 246ms (ActiveRecord: 8.5ms | Allocations: 5905)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:15:48 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 6.2ms | Allocations: 2401)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.erb (Duration: 16.8ms | Allocations: 8350)
+Completed 200 OK in 23ms (Views: 17.4ms | ActiveRecord: 0.7ms | Allocations: 9923)
+
+
+Started GET "/labs/new" for 127.0.0.1 at 2023-09-16 21:16:04 +0300
+Processing by LabsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/new.slim within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/labs/new.slim:5:in `map'
+  Rendered labs/new.slim within layouts/application (Duration: 31.4ms | Allocations: 25864)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 39.8ms | Allocations: 31805)
+Completed 200 OK in 44ms (Views: 40.4ms | ActiveRecord: 0.4ms | Allocations: 33399)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:16:13 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 8.9ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 19.5ms | Allocations: 8307)
+Completed 200 OK in 27ms (Views: 19.7ms | ActiveRecord: 1.5ms | Allocations: 9837)
+
+
+Started GET "/labs/new" for 127.0.0.1 at 2023-09-16 21:16:15 +0300
+Processing by LabsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/new.slim within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/labs/new.slim:5:in `map'
+  Rendered labs/new.slim within layouts/application (Duration: 22.0ms | Allocations: 20851)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 30.2ms | Allocations: 26750)
+Completed 200 OK in 34ms (Views: 30.7ms | ActiveRecord: 0.4ms | Allocations: 28300)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:16:25 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 10.4ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 23.9ms | Allocations: 8256)
+Completed 200 OK in 33ms (Views: 24.1ms | ActiveRecord: 1.0ms | Allocations: 9783)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-09-16 21:16:27 +0300
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 5ms (ActiveRecord: 0.2ms | Allocations: 1761)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:16:27 +0300
+Processing by LabsController#index as TURBO_STREAM
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 285)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 21:16:27 +0300
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 75)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 21.4ms | Allocations: 20438)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.erb (Duration: 30.2ms | Allocations: 26332)
+Completed 200 OK in 33ms (Views: 31.2ms | ActiveRecord: 0.0ms | Allocations: 26974)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:16:30 +0300
+Processing by LabsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 277)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 21:16:30 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 75)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 25.3ms | Allocations: 20414)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.erb (Duration: 35.5ms | Allocations: 26308)
+Completed 200 OK in 39ms (Views: 36.7ms | ActiveRecord: 0.0ms | Allocations: 26950)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:16:33 +0300
+Processing by LabsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 268)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 21:16:33 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 75)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 26.0ms | Allocations: 20414)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.erb (Duration: 39.2ms | Allocations: 26216)
+Completed 200 OK in 42ms (Views: 40.1ms | ActiveRecord: 0.0ms | Allocations: 26838)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:16:35 +0300
+Processing by LabsController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 286)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 21:16:35 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 75)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 26.1ms | Allocations: 20426)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.erb (Duration: 37.1ms | Allocations: 26228)
+Completed 200 OK in 40ms (Views: 38.1ms | ActiveRecord: 0.0ms | Allocations: 26844)
+
+
+Started GET "/users" for 127.0.0.1 at 2023-09-16 21:17:26 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/users"):
+  
+Started GET "/rails/info/routes?path=users" for 127.0.0.1 at 2023-09-16 21:17:30 +0300
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"path"=>"users"}
+Completed 200 OK in 3ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 2577)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:20:41 +0300
+Processing by LabsController#index as HTML
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms | Allocations: 1275)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 21:20:41 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 502)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 49.3ms | Allocations: 21445)
+  Rendered shared/_flash.erb (Duration: 1.2ms | Allocations: 185)
+  Rendered layout layouts/application.erb (Duration: 143.2ms | Allocations: 43367)
+Completed 200 OK in 153ms (Views: 145.7ms | ActiveRecord: 0.8ms | Allocations: 48015)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-09-16 21:20:49 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"1@1.1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "1@1.1"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 237ms (ActiveRecord: 0.3ms | Allocations: 3154)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:20:49 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.3ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 16.1ms | Allocations: 13232)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered layout layouts/application.erb (Duration: 23.3ms | Allocations: 19332)
+Completed 200 OK in 33ms (Views: 23.7ms | ActiveRecord: 1.1ms | Allocations: 23237)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:20:54 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 5.8ms | Allocations: 2369)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 14.0ms | Allocations: 8208)
+Completed 200 OK in 18ms (Views: 14.2ms | ActiveRecord: 0.5ms | Allocations: 9842)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:20:55 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 4.9ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 13.8ms | Allocations: 8205)
+Completed 200 OK in 18ms (Views: 14.1ms | ActiveRecord: 0.5ms | Allocations: 9741)
+
+
+Started GET "/labs/new" for 127.0.0.1 at 2023-09-16 21:20:56 +0300
+Processing by LabsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/new.slim within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/labs/new.slim:5:in `map'
+  Rendered labs/new.slim within layouts/application (Duration: 25.6ms | Allocations: 25922)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 33.8ms | Allocations: 31761)
+Completed 200 OK in 38ms (Views: 33.9ms | ActiveRecord: 0.6ms | Allocations: 33363)
+
+
+Started POST "/labs" for 127.0.0.1 at 2023-09-16 21:21:01 +0300
+Processing by LabsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "lab"=>{"title"=>"test", "description"=>"ds", "user_id"=>"4"}, "commit"=>"Save"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+[31mUnpermitted parameter: :user_id. Context: { controller: LabsController, action: create, request: #<ActionDispatch::Request:0x00007fc7ed0c94c0>, params: {"authenticity_token"=>"[FILTERED]", "lab"=>{"title"=>"test", "description"=>"ds", "user_id"=>"4"}, "commit"=>"Save", "controller"=>"labs", "action"=>"create"} }[0m
+  Rendering layout layouts/application.erb
+  Rendering labs/new.slim within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/labs/new.slim:5:in `map'
+  Rendered labs/new.slim within layouts/application (Duration: 28.9ms | Allocations: 21524)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 39.7ms | Allocations: 27356)
+Completed 200 OK in 46ms (Views: 40.3ms | ActiveRecord: 0.3ms | Allocations: 29750)
+
+
+Started POST "/labs" for 127.0.0.1 at 2023-09-16 21:21:04 +0300
+Processing by LabsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "lab"=>{"title"=>"test", "description"=>"ds", "user_id"=>"7"}, "commit"=>"Save"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+[31mUnpermitted parameter: :user_id. Context: { controller: LabsController, action: create, request: #<ActionDispatch::Request:0x00007fc7ecf6dfe0>, params: {"authenticity_token"=>"[FILTERED]", "lab"=>{"title"=>"test", "description"=>"ds", "user_id"=>"7"}, "commit"=>"Save", "controller"=>"labs", "action"=>"create"} }[0m
+  Rendering layout layouts/application.erb
+  Rendering labs/new.slim within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/labs/new.slim:5:in `map'
+  Rendered labs/new.slim within layouts/application (Duration: 32.4ms | Allocations: 21416)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 44.5ms | Allocations: 27349)
+Completed 200 OK in 50ms (Views: 45.4ms | ActiveRecord: 0.2ms | Allocations: 29558)
+
+
+Started POST "/labs" for 127.0.0.1 at 2023-09-16 21:21:31 +0300
+Processing by LabsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "lab"=>{"title"=>"test", "description"=>"ds", "user_id"=>"4"}, "commit"=>"Save"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/labs_controller.rb:23:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/labs_controller.rb:23:in `create'
+  [1m[36mLab Create (0.3ms)[0m  [1m[32mINSERT INTO "labs" ("title", "description", "grade", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "test"], ["description", "ds"], ["grade", nil], ["created_at", "2023-09-16 18:21:31.543649"], ["updated_at", "2023-09-16 18:21:31.543649"], ["user_id", 4]]
+  ↳ app/controllers/labs_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/labs_controller.rb:23:in `create'
+Redirected to http://127.0.0.1:3000/labs
+Completed 302 Found in 46ms (ActiveRecord: 9.6ms | Allocations: 14229)
+
+
+Started GET "/labs" for 127.0.0.1 at 2023-09-16 21:21:31 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 2], ["id", 3], ["id", 4]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 6.2ms | Allocations: 3012)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 39)
+  Rendered layout layouts/application.erb (Duration: 30.9ms | Allocations: 24454)
+Completed 200 OK in 36ms (Views: 32.5ms | ActiveRecord: 0.5ms | Allocations: 26451)
+
+
+Started DELETE "/labs/8" for 127.0.0.1 at 2023-09-16 21:21:39 +0300
+Processing by LabsController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"8"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs" WHERE "labs"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/labs_controller.rb:43:in `set_lab'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/labs_controller.rb:10:in `destroy'
+  [1m[36mLab Destroy (0.5ms)[0m  [1m[31mDELETE FROM "labs" WHERE "labs"."id" = ?[0m  [["id", 8]]
+  ↳ app/controllers/labs_controller.rb:10:in `destroy'
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/labs_controller.rb:10:in `destroy'
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 15)
+Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 5.8ms | Allocations: 4407)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:22:51 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 5.0ms | Allocations: 2369)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 14.0ms | Allocations: 8253)
+Completed 200 OK in 18ms (Views: 14.4ms | ActiveRecord: 0.5ms | Allocations: 9779)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:23:17 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 12.5ms | Allocations: 10396)
+  Rendered shared/_flash.erb (Duration: 0.8ms | Allocations: 178)
+  Rendered layout layouts/application.erb (Duration: 23.7ms | Allocations: 16999)
+Completed 200 OK in 29ms (Views: 25.1ms | ActiveRecord: 0.5ms | Allocations: 19223)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:23:23 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 11.8ms | Allocations: 10374)
+  Rendered shared/_flash.erb (Duration: 0.7ms | Allocations: 178)
+  Rendered layout layouts/application.erb (Duration: 21.4ms | Allocations: 16972)
+Completed 200 OK in 28ms (Views: 22.8ms | ActiveRecord: 0.5ms | Allocations: 19260)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:23:29 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 5.2ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 14.4ms | Allocations: 8309)
+Completed 200 OK in 28ms (Views: 14.9ms | ActiveRecord: 0.5ms | Allocations: 9947)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-09-16 21:23:31 +0300
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 6ms (ActiveRecord: 0.1ms | Allocations: 2513)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:23:31 +0300
+Processing by LabsController#index as TURBO_STREAM
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 308)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-09-16 21:23:31 +0300
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.3ms | Allocations: 501)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 24.0ms | Allocations: 21490)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 37)
+  Rendered layout layouts/application.erb (Duration: 33.9ms | Allocations: 27601)
+Completed 200 OK in 37ms (Views: 35.7ms | ActiveRecord: 0.0ms | Allocations: 28821)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-09-16 21:23:39 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"1@1.1", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "1@1.1"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 259ms (ActiveRecord: 0.2ms | Allocations: 2892)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:23:39 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 5.0ms | Allocations: 2401)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 26)
+  Rendered layout layouts/application.erb (Duration: 13.3ms | Allocations: 8292)
+Completed 200 OK in 17ms (Views: 13.5ms | ActiveRecord: 0.5ms | Allocations: 9843)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:23:46 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 5.3ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 13.2ms | Allocations: 8211)
+Completed 200 OK in 17ms (Views: 13.4ms | ActiveRecord: 0.5ms | Allocations: 9733)
+
+
+Started GET "/labs/new" for 127.0.0.1 at 2023-09-16 21:24:02 +0300
+Processing by LabsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/new.slim within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/labs/new.slim:5:in `map'
+  Rendered labs/new.slim within layouts/application (Duration: 31.9ms | Allocations: 25851)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 41.7ms | Allocations: 31736)
+Completed 200 OK in 46ms (Views: 42.8ms | ActiveRecord: 0.4ms | Allocations: 33319)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:24:04 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.1ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 5.3ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 13.2ms | Allocations: 8210)
+Completed 200 OK in 17ms (Views: 13.4ms | ActiveRecord: 0.5ms | Allocations: 9747)
+
+
+Started GET "/labs/new" for 127.0.0.1 at 2023-09-16 21:24:05 +0300
+Processing by LabsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/new.slim within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/labs/new.slim:5:in `map'
+  Rendered labs/new.slim within layouts/application (Duration: 32.4ms | Allocations: 20858)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 41.1ms | Allocations: 26799)
+Completed 200 OK in 45ms (Views: 41.6ms | ActiveRecord: 0.4ms | Allocations: 28341)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:24:07 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 12.1ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 23.9ms | Allocations: 8205)
+Completed 200 OK in 32ms (Views: 24.3ms | ActiveRecord: 0.9ms | Allocations: 9729)
+
+
+Started GET "/labs/new" for 127.0.0.1 at 2023-09-16 21:24:08 +0300
+Processing by LabsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/new.slim within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/labs/new.slim:5:in `map'
+  Rendered labs/new.slim within layouts/application (Duration: 20.2ms | Allocations: 20858)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 27.7ms | Allocations: 26797)
+Completed 200 OK in 31ms (Views: 28.2ms | ActiveRecord: 0.3ms | Allocations: 28312)
+
+
+Started GET "/" for 127.0.0.1 at 2023-09-16 21:24:09 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.6ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 7.4ms | Allocations: 2366)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 15.9ms | Allocations: 8247)
+Completed 200 OK in 24ms (Views: 16.0ms | ActiveRecord: 1.2ms | Allocations: 9766)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE (first_name IS NULL or last_name IS NULL)[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ? OFFSET ?[0m  [["LIMIT", 1], ["OFFSET", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mLab Load (0.7ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+Started GET "/rails/info/routes" for ::1 at 2023-09-17 13:06:25 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /root/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.7/lib/rails/templates/layouts/application.html.erb
+  Rendering /root/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.7/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /root/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actionpack-7.0.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb [47 times] (Duration: 21.8ms | Allocations: 7678)
+  Rendered /root/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actionpack-7.0.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 9.9ms | Allocations: 1335)
+  Rendered /root/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.7/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 41.8ms | Allocations: 14680)
+  Rendered layout /root/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.7/lib/rails/templates/layouts/application.html.erb (Duration: 44.9ms | Allocations: 15010)
+Completed 200 OK in 63ms (Views: 49.9ms | ActiveRecord: 0.0ms | Allocations: 19602)
+
+
+Started GET "/" for ::1 at 2023-09-17 13:06:30 +0300
+Processing by LabsController#index as HTML
+Completed 401 Unauthorized in 12ms (ActiveRecord: 0.0ms | Allocations: 4484)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-09-17 13:06:30 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.7ms | Allocations: 621)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 139.2ms | Allocations: 33948)
+Started GET "/" for ::1 at 2023-09-17 13:06:39 +0300
+Processing by LabsController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 419)
+
+
+Started GET "/users/sign_in" for ::1 at 2023-09-17 13:06:39 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 75)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 35.3ms | Allocations: 20456)
+  Rendered shared/_flash.erb (Duration: 5.3ms | Allocations: 184)
+  Rendered layout layouts/application.erb (Duration: 12666.3ms | Allocations: 239611)
+Completed 200 OK in 12695ms (Views: 12669.7ms | ActiveRecord: 1.0ms | Allocations: 248376)
+
+
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 24)
+  Rendered layout layouts/application.erb (Duration: 3789.7ms | Allocations: 159918)
+Completed 200 OK in 3803ms (Views: 3800.9ms | ActiveRecord: 0.0ms | Allocations: 160675)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-09-17 13:06:49 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"lida@mail.ru", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "lida@mail.ru"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 79ms (ActiveRecord: 1.5ms | Allocations: 3698)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"lida@mail.ru", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 77)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 45.7ms | Allocations: 20590)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered layout layouts/application.erb (Duration: 65.8ms | Allocations: 26663)
+Completed 200 OK in 375ms (Views: 67.1ms | ActiveRecord: 0.0ms | Allocations: 27972)
+
+
+Started POST "/users/sign_in" for ::1 at 2023-09-17 13:06:54 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"lida@mail.ru", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "lida@mail.ru"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.2ms | Allocations: 1707)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"lida@mail.ru", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 75)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 37.9ms | Allocations: 20406)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 13)
+  Rendered layout layouts/application.erb (Duration: 56.5ms | Allocations: 26346)
+Completed 200 OK in 360ms (Views: 57.6ms | ActiveRecord: 0.0ms | Allocations: 26872)
+
+
+Started GET "/users/sign_up" for ::1 at 2023-09-17 13:07:01 +0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.erb
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 165)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 32.2ms | Allocations: 23384)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.erb (Duration: 45.1ms | Allocations: 29490)
+Completed 200 OK in 49ms (Views: 47.4ms | ActiveRecord: 0.0ms | Allocations: 30893)
+
+
+Started POST "/users" for ::1 at 2023-09-17 13:07:17 +0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"first_name"=>"Лола", "last_name"=>"Попова", "email"=>"m@mail.ru", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "m@mail.ru"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Лола"], ["last_name", "Попова"], ["email", "m@mail.ru"], ["created_at", "2023-09-17 10:07:17.834395"], ["updated_at", "2023-09-17 10:07:17.834395"], ["encrypted_password", "$2a$12$bVB24pevVxoHCyn.28QtRe8il4OjBClY7pYgC7Z1lDD2Hw/OGTLX2"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (13.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 303 See Other in 321ms (ActiveRecord: 14.9ms | Allocations: 9041)
+
+
+Started GET "/" for ::1 at 2023-09-17 13:07:17 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 72.5ms | Allocations: 27958)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 40)
+  Rendered layout layouts/application.erb (Duration: 85.6ms | Allocations: 34166)
+Completed 200 OK in 105ms (Views: 87.1ms | ActiveRecord: 1.7ms | Allocations: 38818)
+
+
+Started DELETE "/labs/4" for ::1 at 2023-09-17 13:07:27 +0300
+Processing by LabsController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mLab Load (0.4ms)[0m  [1m[34mSELECT "labs".* FROM "labs" WHERE "labs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/labs_controller.rb:43:in `set_lab'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/labs_controller.rb:10:in `destroy'
+  [1m[36mLab Destroy (1.3ms)[0m  [1m[31mDELETE FROM "labs" WHERE "labs"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/labs_controller.rb:10:in `destroy'
+  [1m[36mTRANSACTION (13.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/labs_controller.rb:10:in `destroy'
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 22)
+Completed 200 OK in 52ms (Views: 0.2ms | ActiveRecord: 15.5ms | Allocations: 7116)
+
+
+Started GET "/labs/6/grade" for ::1 at 2023-09-17 13:07:36 +0300
+Processing by LabsController#grade as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs" WHERE "labs"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/labs_controller.rb:43:in `set_lab'
+  Rendering layout layouts/application.erb
+  Rendering labs/grade.slim within layouts/application
+  Rendered labs/grade.slim within layouts/application (Duration: 22.2ms | Allocations: 11844)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 30)
+  Rendered layout layouts/application.erb (Duration: 36.9ms | Allocations: 18026)
+Completed 200 OK in 59ms (Views: 38.6ms | ActiveRecord: 0.6ms | Allocations: 20366)
+
+
+Started GET "/" for ::1 at 2023-09-17 13:07:38 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?)[0m  [["id", 2], ["id", 3]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 7.9ms | Allocations: 2262)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.erb (Duration: 19.2ms | Allocations: 8296)
+Completed 200 OK in 28ms (Views: 22.3ms | ActiveRecord: 0.7ms | Allocations: 10126)
+
+
+Started GET "/labs/new" for ::1 at 2023-09-17 13:07:40 +0300
+Processing by LabsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/new.slim within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/labs/new.slim:5:in `map'
+  Rendered labs/new.slim within layouts/application (Duration: 44.5ms | Allocations: 26646)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 28)
+  Rendered layout layouts/application.erb (Duration: 58.5ms | Allocations: 32812)
+Completed 200 OK in 64ms (Views: 58.9ms | ActiveRecord: 0.5ms | Allocations: 34540)
+
+
+Started POST "/labs" for ::1 at 2023-09-17 13:08:07 +0300
+Processing by LabsController#create as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "lab"=>{"title"=>"Nice title", "description"=>"Nice description", "user_id"=>"13"}, "commit"=>"Save"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/labs_controller.rb:23:in `create'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/labs_controller.rb:23:in `create'
+  [1m[36mLab Create (0.4ms)[0m  [1m[32mINSERT INTO "labs" ("title", "description", "grade", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Nice title"], ["description", "Nice description"], ["grade", nil], ["created_at", "2023-09-17 10:08:07.976225"], ["updated_at", "2023-09-17 10:08:07.976225"], ["user_id", 13]]
+  ↳ app/controllers/labs_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (9.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/labs_controller.rb:23:in `create'
+Redirected to http://localhost:3000/labs
+Completed 302 Found in 38ms (ActiveRecord: 10.3ms | Allocations: 8873)
+
+
+Started GET "/labs" for ::1 at 2023-09-17 13:08:08 +0300
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?)[0m  [["id", 2], ["id", 3], ["id", 13]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 14.8ms | Allocations: 2512)
+  Rendered shared/_flash.erb (Duration: 0.1ms | Allocations: 27)
+  Rendered layout layouts/application.erb (Duration: 26.8ms | Allocations: 8574)
+Completed 200 OK in 32ms (Views: 27.0ms | ActiveRecord: 1.0ms | Allocations: 10296)
+
+
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "fumiko.goodwin@hammes.info"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("first_name", "last_name", "email", "created_at", "updated_at", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["first_name", "Raymundo"], ["last_name", "Ondricka"], ["email", "fumiko.goodwin@hammes.info"], ["created_at", "2023-09-17 10:16:47.512961"], ["updated_at", "2023-09-17 10:16:47.512961"], ["encrypted_password", "$2a$12$l/O0M00wo6/8ZwdzKU5HVeK/Zz5Eo3GxWGFVCU7A2Wf/4wW/pqRu6"], ["reset_password_token", nil], ["reset_password_sent_at", nil], ["remember_created_at", nil]]
+  [1m[36mTRANSACTION (9.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mLab Create (0.3ms)[0m  [1m[32mINSERT INTO "labs" ("title", "description", "grade", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "Lab Title"], ["description", "Lab Description"], ["grade", nil], ["created_at", "2023-09-17 10:16:47.531974"], ["updated_at", "2023-09-17 10:16:47.531974"], ["user_id", 14]]
+  [1m[36mTRANSACTION (10.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/labs" for ::1 at 2023-09-17 13:17:20 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?)[0m  [["id", 2], ["id", 3], ["id", 13], ["id", 14]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 65.2ms | Allocations: 25992)
+  Rendered shared/_flash.erb (Duration: 0.6ms | Allocations: 205)
+  Rendered layout layouts/application.erb (Duration: 196.0ms | Allocations: 76974)
+Completed 200 OK in 246ms (Views: 198.2ms | ActiveRecord: 1.8ms | Allocations: 94509)
+
+
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mLab Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "labs"[0m
+Started GET "/labs" for ::1 at 2023-09-17 14:08:20 +0300
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by LabsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  Rendering layout layouts/application.erb
+  Rendering labs/index.slim within layouts/application
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m
+  ↳ app/views/labs/index.slim:3
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (?, ?, ?, ?)[0m  [["id", 2], ["id", 3], ["id", 13], ["id", 14]]
+  ↳ app/views/labs/index.slim:3
+  Rendered labs/index.slim within layouts/application (Duration: 81.3ms | Allocations: 25994)
+  Rendered shared/_flash.erb (Duration: 0.6ms | Allocations: 205)
+  Rendered layout layouts/application.erb (Duration: 203.2ms | Allocations: 77112)
+Completed 200 OK in 270ms (Views: 204.5ms | ActiveRecord: 2.7ms | Allocations: 94630)
+
+
+Started GET "/labs/2" for ::1 at 2023-09-17 14:08:27 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/labs/2"):
+  
+Started GET "/labs/1]" for ::1 at 2023-09-17 14:08:32 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/labs/1]"):
+  
+Started GET "/labs/1" for ::1 at 2023-09-17 14:08:35 +0300
+  
+ActionController::RoutingError (No route matches [GET] "/labs/1"):
+  
+Started GET "/rails/info/routes" for ::1 at 2023-09-17 14:09:21 +0300
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /root/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.7/lib/rails/templates/layouts/application.html.erb
+  Rendering /root/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.7/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /root/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actionpack-7.0.7/lib/action_dispatch/middleware/templates/routes/_route.html.erb [47 times] (Duration: 20.7ms | Allocations: 7493)
+  Rendered /root/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/actionpack-7.0.7/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 2.8ms | Allocations: 880)
+  Rendered /root/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.7/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 29.5ms | Allocations: 13643)
+  Rendered layout /root/.rbenv/versions/3.1.2/lib/ruby/gems/3.1.0/gems/railties-7.0.7/lib/rails/templates/layouts/application.html.erb (Duration: 33.1ms | Allocations: 13920)
+Completed 200 OK in 39ms (Views: 36.4ms | ActiveRecord: 0.0ms | Allocations: 14979)
+
+
+  [1m[36mLab Load (0.2ms)[0m  [1m[34mSELECT "labs".* FROM "labs"[0m

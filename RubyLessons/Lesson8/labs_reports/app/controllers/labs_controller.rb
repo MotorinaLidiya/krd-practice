@@ -3,7 +3,7 @@ class LabsController < ApplicationController
   before_action :set_lab, only: %i[destroy grade mark]
 
   def index
-    @labs = Lab.all
+    @labs = Lab.includes(:user)
   end
 
   def destroy
