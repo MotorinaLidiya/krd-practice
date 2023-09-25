@@ -1,0 +1,13 @@
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/variables";
+
+$theme-color: #F6C9C4;
+$background-color: #F3F3F3;
+
+$custom-theme-colors: (
+  "theme": $theme-color,
+  "background": $background-color
+);
+
+$theme-colors: map-merge-multiple($custom-theme-colors, $theme-colors);

@@ -1,0 +1,26 @@
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = bootstrap_devise_error_messages!
+  section.vh-75
+    .container.py-5.h-100
+      .row.d-flex.justify-content-center.align-items-center.h-100
+        .col-12.col-md-8.col-lg-6.col-xl-5
+          .card.bg-dark style="border-radius: 1rem;"
+            .card-body.p-5.text-center
+              .mb-md-5.mt-md-4.pb-5
+                h2.fw-bold.mb-2.text-uppercase.text-theme = t('.sign_up')
+                p.text-white.mb-5 Please enter your email and password!
+                .form-outline.form-white.mb-4
+                  = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control form-control-lg'
+                  = f.label :email, class: 'text-theme'
+                .form-outline.form-white.mb-4
+                  = f.password_field :password, autocomplete: 'current-password', class: 'form-control form-control-lg'
+                  = f.label :password, class: 'text-theme'
+                  - if @minimum_password_length
+                    .form-text.text-theme.mt-0 = t('devise.shared.minimum_password_length', count: @minimum_password_length)
+                /.form-outline.form-white.mb-4
+                  = f.password_field :password_confirmation, autocomplete: 'current-password', class: 'form-control form-control-lg'
+                  = f.label :password_confirmation, class: 'text-theme'
+                = f.submit t('.sign_up'), class: 'btn btn-outline-theme btn-lg px-5'
+              p.mb-0
+                span.me-1.text-theme Do you have an account?
+                = link_to 'Log in', new_user_session_path, class:"text-white fw-bold"

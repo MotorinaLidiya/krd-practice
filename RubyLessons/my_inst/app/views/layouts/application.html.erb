@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Myinst</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-light bg-dark navbar-custom">
+      <div class="container-fluid">
+        <%= link_to root_path do %>
+          <%= image_tag 'logo',  height: "24", class: "d-inline-block align-text-top"%>
+        <% end %>
+
+          <ul class="navbar-nav flex-row me-auto">
+            <li class="nav-item ms-4 me-3">
+              <%= link_to 'Profile', profile_path, class: 'nav-link text-theme' %>
+            </li>
+            <li class="nav-item me-3">
+              <%= link_to 'Posts', posts_path, class: 'nav-link text-theme' %>
+            </li>
+            <li class="nav-item">
+              <%= link_to 'Subscriptions', root_path, class: 'nav-link text-theme' %>
+            </li>
+          </ul>
+
+        <% if current_user.present? %>
+          <div class="d-flex">
+            <%= link_to 'Exit', destroy_user_session_path, method: :delete, class:"btn btn-sm btn-theme" %>
+          </div>
+        <% end %>
+      </div>
+    </nav>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <%= render 'layouts/flash' %>
+  </body>
+</html>

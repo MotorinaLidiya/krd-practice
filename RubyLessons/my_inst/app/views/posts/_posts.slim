@@ -1,0 +1,19 @@
+- @posts.each do |post|
+  .card.mb-3
+    .card-body
+      .row
+        .col-6.text-start = post.author.email
+        .col-6.text-end
+          span.me-2 Created at:
+          span = to_date_format(post.created_at)
+      h3 = post.title
+      .row
+        - post.image&.photos&.each do |photo|
+          .col-3.mb-3
+            .post-image.border style="background-image: url(#{rails_blob_path(photo)})"
+      .btn-outline-background.btn.btn-sm.me-2.text-dark
+        span.me-2 = @post_reactions.dig(post.id, :like) || 0
+        = fa_icon 'thumbs-up'
+      .btn-outline-background.btn.btn-sm.text-dark
+        span.me-2 = @post_reactions.dig(post.id, :dislike) || 0
+        = fa_icon 'thumbs-down'

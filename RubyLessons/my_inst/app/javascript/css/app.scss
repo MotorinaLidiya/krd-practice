@@ -1,0 +1,39 @@
+@import './variables';
+@import 'bootstrap';
+@import 'toastr';
+@import url('https://fonts.googleapis.com/css2?family=Mooli&display=swap');
+
+body {
+  background-color: $background-color;
+  font-family: 'Mooli', sans-serif;
+}
+
+.navbar-custom {
+  height: 60px
+}
+
+button.close {
+  border-radius: 100px;
+  font-size: 20px;
+  &:hover {
+    background-color: rgba(red($theme-color), green($theme-color), blue($theme-color), .75);
+  }
+  height: 40px;
+  width: 40px;
+  background-color: transparent;
+  border: none;
+}
+
+.wrap-card {
+  width: 680px;
+  background: #fff;
+  border-radius: 10px;
+}
+
+.post-image {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 200px;
+  height: 200px;
+}

@@ -1,0 +1,25 @@
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  section.vh-75
+    .container.py-5.h-100
+      .row.d-flex.justify-content-center.align-items-center.h-100
+        .col-12.col-md-8.col-lg-6.col-xl-5
+          .card.bg-dark style="border-radius: 1rem;"
+            .card-body.p-5.text-center
+              .mb-md-5.mt-md-4.pb-5
+                h2.fw-bold.mb-2.text-uppercase.text-theme = t('.sign_in')
+                p.text-white.mb-5 Please enter your login and password!
+                .form-outline.form-white.mb-4
+                  = f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control form-control-lg'
+                  = f.label :email, class: 'text-theme'
+                .form-outline.form-white.mb-4
+                  = f.password_field :password, autocomplete: 'current-password', class: 'form-control form-control-lg'
+                  = f.label :password, class: 'text-theme'
+                - if devise_mapping.rememberable?
+                  .form-group.form-check.mb-3.mt-1
+                    = f.check_box :remember_me, class: 'form-check-input'
+                    = f.label :remember_me, class: 'form-check-label text-theme'
+                      = resource.class.human_attribute_name('remember_me')
+                = f.submit t('.sign_in'), class: 'btn btn-outline-theme btn-lg px-5'
+              p.mb-0
+                span.me-1.text-theme Don't have an account?
+                = link_to 'Sign Up', new_user_registration_path, class:"text-white fw-bold"

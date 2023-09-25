@@ -1,0 +1,23 @@
+{
+  "name": "myinst",
+  "private": true,
+  "dependencies": {
+    "@babel/plugin-proposal-private-methods": "^7.21.4-esm.4",
+    "@popperjs/core": "^2.11.8",
+    "@rails/actioncable": "^6.0.0",
+    "@rails/activestorage": "^7.0.8",
+    "@rails/ujs": "^6.0.0",
+    "@rails/webpacker": "5.4.4",
+    "bootstrap": "^5.3.2",
+    "jquery": "^3.7.1",
+    "toastr": "^2.1.4",
+    "turbolinks": "^5.2.0",
+    "webpack": "^4.46.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "version": "0.1.0",
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "webpack-dev-server": "^3"
+  }
+}

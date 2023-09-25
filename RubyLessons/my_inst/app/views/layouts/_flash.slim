@@ -1,0 +1,7 @@
+javascript:
+  if ("#{flash[:alert]}") {
+    toastr.error("#{flash[:alert]}");
+  }
+  if ("#{flash[:notice]}") {
+    toastr.success("#{flash[:notice]}");
+  }

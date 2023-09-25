@@ -1,0 +1,40 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/root/krd-practice/RubyLessons/my_inst/spec/support/devise.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/root/krd-practice/RubyLessons/my_inst/spec/support/factory_bot.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/root/krd-practice/RubyLessons/my_inst/app/controllers/home_controller.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/root/krd-practice/RubyLessons/my_inst/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          0,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1695643258
+  }
+}
