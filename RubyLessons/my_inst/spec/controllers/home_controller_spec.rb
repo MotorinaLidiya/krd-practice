@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe HomeController, type: :controller do
-  describe 'GET #index' do
+  describe '#index' do
     context 'when user is authenticated' do
       let(:authenticated_user) { create(:user) }
 

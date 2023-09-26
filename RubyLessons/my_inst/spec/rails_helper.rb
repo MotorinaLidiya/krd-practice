@@ -8,6 +8,8 @@ require 'rspec/rails'
 # Add additional requires below this line. Rails is not loaded until this point!
 ActiveRecord::Migration.maintain_test_schema!
 
+require 'devise'
+
 require 'simplecov'
 SimpleCov.start
 
@@ -64,4 +66,5 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  config.include Devise::Test::ControllerHelpers, type: :controller
 end

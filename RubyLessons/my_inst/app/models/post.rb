@@ -5,7 +5,7 @@ class Post < ApplicationRecord
 
   accepts_nested_attributes_for :image
 
-  validates :title, presence: true
+  validates :title, presence: true, length: { maximum: 300 }
 
   def self.with_reactions
     reactions = Post::Reaction.group(:post_id, :kind).count
