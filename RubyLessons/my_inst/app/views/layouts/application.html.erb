@@ -13,19 +13,19 @@
   <body>
     <nav class="navbar navbar-light bg-dark navbar-custom">
       <div class="container-fluid">
-        <%= link_to root_path do %>
+        <%= link_to root_path, data: { turbolinks: false } do %>
           <%= image_tag 'logo',  height: "24", class: "d-inline-block align-text-top"%>
         <% end %>
 
           <ul class="navbar-nav flex-row me-auto">
             <li class="nav-item ms-4 me-3">
-              <%= link_to 'Profile', profile_path, class: 'nav-link text-theme' %>
+              <%= link_to 'Profile', profile_path, class: 'nav-link text-theme', data: { turbolinks: false } %>
             </li>
             <li class="nav-item me-3">
-              <%= link_to 'Posts', posts_path, class: 'nav-link text-theme' %>
+              <%= link_to 'Posts', posts_path, class: 'nav-link text-theme', data: { turbolinks: false } %>
             </li>
             <li class="nav-item">
-              <%= link_to 'Subscriptions', root_path, class: 'nav-link text-theme' %>
+              <%= link_to 'Subscriptions', root_path, class: 'nav-link text-theme', data: { turbolinks: false } %>
             </li>
           </ul>
 

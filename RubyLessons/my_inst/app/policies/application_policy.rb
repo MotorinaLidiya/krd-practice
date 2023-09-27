@@ -13,6 +13,18 @@ class ApplicationPolicy < ActionPolicy::Base
     index?
   end
 
+  def edit?
+    index?
+  end
+    
+  def update?
+    index?
+  end
+
+  def destroy?
+    index?
+  end
+
   private
 
   def log_in?

@@ -1,0 +1,19 @@
+section.vh-75
+  .container.py-5.h-100
+    .row.d-flex.justify-content-center.align-items-center.h-100
+      .col-12.col-md-8.col-lg-6.col-xl-5
+        .card.bg-dark style="border-radius: 1rem;"
+          .card-body.p-5.text-center
+            h2.fw-bold.mb-4.text-uppercase.text-theme = title
+            = simple_form_for @post do |f|
+              .mb-2
+                = f.input :title, label: false, class: 'form-control form-control-lg'
+                = f.label :title, class: 'text-theme'
+              .mb-4
+                = f.simple_fields_for :image, @post.image || @post.build_image do |i|
+                  = i.input :photos, as: :file, input_html: { multiple: true }
+                  = f.label :images, class: 'text-theme'
+              .mb-2
+                = f.submit 'Update', class: 'btn btn-outline-theme btn-lg px-5 mt-3'
+              = link_to 'Delete', @post, method: :delete, data: { confirm: 'You sure you want to destroy the post?' }, class: 'btn btn-danger mt-3'
+              

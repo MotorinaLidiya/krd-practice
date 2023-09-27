@@ -18,6 +18,7 @@ import 'css/app'
 
 // js files
 import "./devise_registration"
+import "./vue"
 
 global.toastr = require("toastr");
 toastr.options = {

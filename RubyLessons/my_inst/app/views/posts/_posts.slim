@@ -11,9 +11,7 @@
         - post.image&.photos&.each do |photo|
           .col-3.mb-3
             .post-image.border style="background-image: url(#{rails_blob_path(photo)})"
-      .btn-outline-background.btn.btn-sm.me-2.text-dark
-        span.me-2 = @post_reactions.dig(post.id, :like) || 0
-        = fa_icon 'thumbs-up'
-      .btn-outline-background.btn.btn-sm.text-dark
-        span.me-2 = @post_reactions.dig(post.id, :dislike) || 0
-        = fa_icon 'thumbs-down'
+      post-actions reactions=@post_reactions[post.id].to_json user_id=current_user.id post_id=post.id comments=@post_comments[post.id].to_json
+      .text-end.mt-2
+      - if current_user == post.author
+        = link_to 'Edit', edit_post_path(post), class: 'button btn btn-theme float-end mt-1'
