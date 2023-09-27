@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'home#index'
-  resources :posts 
+  root to: "home#index"
+  resources :posts, except: :show
   get :profile, to: 'posts#profile'
 
   namespace :api do

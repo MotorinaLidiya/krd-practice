@@ -3,11 +3,11 @@ class PostsController < ApplicationController
   before_action :set_actions, only: %i[index profile]
 
   def index
-    @posts = Post.includes(:author, :image, :reactions, :comments).where.not(author: current_user).order(created_at: :desc)
+    @posts = Post.includes(:author, :reactions, :comments).where.not(author: current_user).order(created_at: :desc)
   end
 
   def profile
-    @posts = current_user.posts.includes(:author, :image, :reactions, :comments).order(created_at: :desc)
+    @posts = current_user.posts.includes(:author, :reactions, :comments).order(created_at: :desc)
   end
 
   def new
@@ -20,6 +20,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to profile_path, notice: 'Post was successfully created'
     else
+      debugger
       render :new
     end
   end
@@ -46,15 +47,13 @@ class PostsController < ApplicationController
       redirect_to profile_path, alert: 'Post was not destroyed'
     end
   end
-
+  
   private
 
   def post_params
     params.require(:post).permit(
       :title,
-      image_attributes: {
-        photos: []
-      }
+      images: []
     )
   end
 

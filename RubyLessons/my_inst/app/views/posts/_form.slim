@@ -10,7 +10,6 @@ section.vh-75
                 = f.input :title, label: false, class: 'form-control form-control-lg'
                 = f.label :title, class: 'text-theme'
               .mb-4
-                = f.simple_fields_for :image, @post.image || @post.build_image do |i|
-                  = i.input :photos, as: :file, input_html: { multiple: true }
-                  = f.label :images, class: 'text-theme'
+                = f.input :images, as: :file, input_html: { multiple: true }
+                = f.label :images, class: 'text-theme'
               = f.submit 'Create', class: 'btn btn-outline-theme btn-lg px-5 mt-3'

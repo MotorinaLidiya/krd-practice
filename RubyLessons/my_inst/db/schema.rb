@@ -40,14 +40,6 @@ ActiveRecord::Schema.define(version: 2023_09_25_172647) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
-  create_table "images", force: :cascade do |t|
-    t.string "imageable_type", null: false
-    t.integer "imageable_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["imageable_type", "imageable_id"], name: "index_images_on_imageable"
-  end
-
   create_table "post_comments", force: :cascade do |t|
     t.string "body"
     t.integer "post_id", null: false

@@ -24,7 +24,7 @@ class ApplicationPolicy < ActionPolicy::Base
   def destroy?
     index?
   end
-
+  
   private
 
   def log_in?
