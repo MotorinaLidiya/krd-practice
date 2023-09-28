@@ -4571,6 +4571,11 @@ last-call-webpack-plugin@^3.0.0:
     lodash "^4.17.5"
     webpack-sources "^1.1.0"
 
+lightbox2@^2.11.4:
+  version "2.11.4"
+  resolved "https://registry.yarnpkg.com/lightbox2/-/lightbox2-2.11.4.tgz#3ba020011ecea9237d0905c47db4026e9ab64400"
+  integrity sha512-Fof7RJFWV3Fe4CWTjpto30h04Led97nRStFNLaUD/VrlEs72r7LF9WMndENYvU2e4o8WboSuy+dmetXSKSnQ2Q==
+
 lines-and-columns@^1.1.6:
   version "1.2.4"
   resolved "https://registry.npmjs.org/lines-and-columns/-/lines-and-columns-1.2.4.tgz"

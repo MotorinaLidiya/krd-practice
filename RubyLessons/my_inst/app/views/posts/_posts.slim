@@ -10,7 +10,8 @@
       .row
         - post.images.each do |photo|
           .col-3.mb-3
-            .post-image.border style="background-image: url(#{rails_blob_path(photo)})"
+            = link_to rails_blob_path(photo), data: { lightbox: post.id }
+              .post-image.border data-lightbox=post.id style="background-image: url(#{rails_blob_path(photo)})"
       post-actions reactions=@post_reactions[post.id].to_json user_id=@user.id post_id=post.id comments=@post_comments[post.id].to_json
       .text-end.mt-2
        - if allowed_to?(:edit?, post)

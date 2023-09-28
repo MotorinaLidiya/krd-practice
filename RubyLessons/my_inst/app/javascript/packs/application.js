@@ -12,6 +12,7 @@ import "channels"
 import 'jquery'
 import 'toastr'
 import 'bootstrap'
+import 'lightbox2'
 
 // js files
 import "./devise_registration"
