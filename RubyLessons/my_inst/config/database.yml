@@ -28,4 +28,4 @@ production:
   pool: 5
   url: <%= ENV['DATABASE_URL'] %>
   username: myinst_user
-  password: <%= ENV['DATABASE_PASSWORD'] %> 
+  password: <%= ENV['DATABASE_PASSWORD'] %>

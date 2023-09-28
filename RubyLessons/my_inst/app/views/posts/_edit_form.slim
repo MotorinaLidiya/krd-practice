@@ -14,5 +14,6 @@ section.vh-75
                 = f.label :images, class: 'text-theme'
               .mb-2
                 = f.submit 'Update', class: 'btn btn-outline-theme btn-lg px-5 mt-3'
-              = link_to 'Delete', @post, method: :delete, data: { confirm: 'You sure you want to destroy the post?' }, class: 'btn btn-danger mt-3'
+              - if allowed_to?(:destroy?, @post)
+                = link_to 'Delete', @post, method: :delete, data: { confirm: 'You sure you want to destroy the post?' }, class: 'btn btn-danger mt-3'
               

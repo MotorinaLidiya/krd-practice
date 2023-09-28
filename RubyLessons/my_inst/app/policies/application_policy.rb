@@ -5,12 +5,16 @@ class ApplicationPolicy < ActionPolicy::Base
     log_in?
   end
 
+  def show?
+    index?
+  end
+
   def new?
     index?
   end
 
   def create?
-    index?
+    new?
   end
 
   def edit?
@@ -18,11 +22,11 @@ class ApplicationPolicy < ActionPolicy::Base
   end
     
   def update?
-    index?
+    edit?
   end
 
   def destroy?
-    index?
+    edit?
   end
   
   private

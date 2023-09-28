@@ -1,21 +1,60 @@
 class UsersController < ApplicationController
+  before_action :set_user, except: %i[profile subscribtions]
+
   def show
     @user = User.find(params[:id])
-    @posts = @user.posts.order(created_at: :desc)
+    @posts = @user.posts.includes(:author, :reactions, :comments).order(created_at: :desc)
 
-    @post_reactions = Post::Reaction.group_by_posts(current_user.id)
+    set_reactions
+  end
+
+  def profile
+    authorize! :user
+    @user = current_user
+    @posts = @user.posts.includes(:author, :reactions, :comments).order(created_at: :desc)
+
+    set_reactions
+  end
+
+  def subscribtions
+    authorize! :user
+    @user = current_user
+    @posts = Post.where(author_id: @user.subscriptions.pluck(:owner_id))
+                  .includes(:author, :reactions, :comments)
+                  .order(created_at: :desc)
+    set_reactions
+
+  end
+
+  def subscribe
+    subscribtion = Subscribtion.new(owner: @user, subscriber: current_user)
+
+    if subscribtion.save
+      redirect_to user_path(@user), notice: 'You are successfully subscribed'
+    else
+      redirect_to user_path(@user), notice: 'Failed to subscribe'
+    end
+  end
+
+  def unsubscribe
+    subscribtion = Subscribtion.find_by(owner: @user, subscriber: current_user).destroy
+
+    if subscribtion.destroyed?
+      redirect_to user_path(@user), notice: 'You are successfully unsubscribed'
+    else
+      redirect_to user_path(@user), notice: 'Failed to unsubscribe'
+    end
+  end
+
+  private
+
+  def set_reactions
+    @post_reactions = Post::Reaction.group_by_posts(@user.id)
     @post_comments = Post::Comment.group_by_posts 
   end
 
-  def create
-    @user_to_subscribe = User.find(params[:user_id])
-    current_user.subscribe_to(@user_to_subscribe)
-    redirect_to @user_to_subscribe, notice: 'You are now subscribed.'
-  end
-
-  def destroy
-    @user_to_unsubscribe = User.find(params[:user_id])
-    current_user.unsubscribe_from(@user_to_unsubscribe)
-    redirect_to @user_to_unsubscribe, notice: 'You have unsubscribed.'
+  def set_user
+    @user = User.find(params[:id])
+    authorize! @user
   end
 end

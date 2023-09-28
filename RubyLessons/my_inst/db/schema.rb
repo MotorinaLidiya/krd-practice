@@ -69,13 +69,14 @@ ActiveRecord::Schema.define(version: 2023_09_27_172152) do
     t.index ["author_id"], name: "index_posts_on_author_id"
   end
 
-  create_table "subscribers", force: :cascade do |t|
+  create_table "subscribtions", force: :cascade do |t|
     t.integer "owner_id", null: false
     t.integer "subscriber_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["owner_id"], name: "index_subscribers_on_owner_id"
-    t.index ["subscriber_id"], name: "index_subscribers_on_subscriber_id"
+    t.index ["owner_id"], name: "index_subscribtions_on_owner_id"
+    t.index ["subscriber_id", "owner_id"], name: "index_subscribtions_on_subscriber_id_and_owner_id", unique: true
+    t.index ["subscriber_id"], name: "index_subscribtions_on_subscriber_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -97,6 +98,6 @@ ActiveRecord::Schema.define(version: 2023_09_27_172152) do
   add_foreign_key "post_reactions", "posts"
   add_foreign_key "post_reactions", "users"
   add_foreign_key "posts", "users", column: "author_id"
-  add_foreign_key "subscribers", "users", column: "owner_id"
-  add_foreign_key "subscribers", "users", column: "subscriber_id"
+  add_foreign_key "subscribtions", "users", column: "owner_id"
+  add_foreign_key "subscribtions", "users", column: "subscriber_id"
 end

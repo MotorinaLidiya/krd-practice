@@ -1,5 +1,5 @@
 class PostPolicy < ApplicationPolicy
-  def profile?
-    index?
+  def edit?
+    user == record.author
   end
 end

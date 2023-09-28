@@ -1,0 +1,10 @@
+.row.text-center.mt-3
+  .col
+    h4 Publications
+    h4 = @user.posts.count
+  .col
+    h4 Subscribers
+    h4 = @user.subscribers.count
+  .col
+    h4 Subscriptions
+    h4 = @user.subscriptions.count

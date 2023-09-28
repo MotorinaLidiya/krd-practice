@@ -1,23 +1,9 @@
 .ms-5.me-5
-  .text-center
+  .text-center.mb-3
     h2.d-inline-block.mt-1 = @user.email
-    = link_to 'Add post', new_post_path, class: 'button btn float-end mt-1 btn-theme'
-  .row.text-center.mt-3
-    .col
-      h4 Publications
-      h4 = @user.posts.count
-    .col
-      h4 Subscribers
-      /h4 = @user.subscribers.count
-    .col
-      h4 Subscriptions
-      /h4 = @user.owners.count
-  .mt-3
-  .text-center
-    h4.d-inline-block.mt-1
-      - if current_user != @user
-        - if current_user.subscribed_to?(@user)
-          = link_to 'Unfollow', unsubscribe_user_path(user_id: @user.id), method: :delete, class: 'btn btn-danger'
-        else
-          = link_to 'Follow', subscribe_user_path(user_id: @user.id), method: :post, class: 'button btn float-end mt-1 btn-theme'
-  = render 'posts'
+    = render 'info_block'
+    - if allowed_to?(:subscribe?, @user)
+      = link_to 'Subscribe', subscribe_user_path(@user), class: 'd-inline-block btn btn-theme btn-lg', method: :post, data: { turbolinks: false }
+    - if allowed_to?(:unsubscribe?, @user)
+      = link_to 'Unubscribe', unsubscribe_user_path(@user), class: 'd-inline-block btn btn-outline-theme text-dark btn-lg', method: :post, data: { turbolinks: false }
+  = render 'posts/posts'

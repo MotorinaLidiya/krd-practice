@@ -1,13 +1,12 @@
 class PostsController < ApplicationController
-  before_action :authorize
-  before_action :set_actions, only: %i[index profile]
+  before_action :authorize, except: %i[edit update destroy]
+  before_action :set_post, only: %i[edit update destroy]
 
   def index
+    @user = current_user
     @posts = Post.includes(:author, :reactions, :comments).where.not(author: current_user).order(created_at: :desc)
-  end
-
-  def profile
-    @posts = current_user.posts.includes(:author, :reactions, :comments).order(created_at: :desc)
+    @post_reactions = Post::Reaction.group_by_posts(current_user.id)
+    @post_comments = Post::Comment.group_by_posts
   end
 
   def new
@@ -20,18 +19,13 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to profile_path, notice: 'Post was successfully created'
     else
-      debugger
       render :new
     end
   end
 
-  def edit
-    @post = Post.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @post = Post.find(params[:id])
-
     if @post.update(post_params)
       redirect_to profile_path, notice: 'Post was successfully updated'
     else
@@ -40,8 +34,9 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    @post = Post.find(params[:id])
-    if @post.destroy
+    @post.destroy
+
+    if @post.destroyed?
       redirect_to profile_path, notice: 'Post was successfully destroyed'
     else
       redirect_to profile_path, alert: 'Post was not destroyed'
@@ -61,8 +56,8 @@ class PostsController < ApplicationController
     authorize! :post
   end
 
-  def set_actions
-    @post_reactions = Post::Reaction.group_by_posts(current_user.id)
-    @post_comments = Post::Comment.group_by_posts
+  def set_post
+    @post = Post.find(params[:id])
+    authorize! @post
   end
 end
