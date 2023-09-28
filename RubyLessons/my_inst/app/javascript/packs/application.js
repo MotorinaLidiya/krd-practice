@@ -13,9 +13,6 @@ import 'jquery'
 import 'toastr'
 import 'bootstrap'
 
-// css
-import 'css/app'
-
 // js files
 import "./devise_registration"
 import "./vue"

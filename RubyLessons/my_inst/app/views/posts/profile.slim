@@ -8,7 +8,9 @@
       h4 = current_user.posts.count
     .col
       h4 Subscribers
+      /h4 = current_user.subscribers.count
     .col
       h4 Subscriptions
+      /h4 = current_user.owners.count
   .mt-3
   = render 'posts'
