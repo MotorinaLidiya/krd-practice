@@ -20,8 +20,8 @@ class UsersController < ApplicationController
     authorize! :user
     @user = current_user
     @posts = Post.where(author_id: @user.subscriptions.pluck(:owner_id))
-                  .includes(:author, :reactions, :comments)
-                  .order(created_at: :desc)
+                 .includes(:author, :reactions, :comments)
+                 .order(created_at: :desc)
     set_reactions
 
   end
