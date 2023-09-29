@@ -2,7 +2,7 @@
   .card.mb-3
     .card-body
       .row
-        .col-6.text-start = link_to post.author.email, user_path(post.author)
+        .col-6.text-start = link_to post.author.email, user_path(post.author), data: { turbolinks: false }
         .col-6.text-end
           span.me-2 Created at:
           span = to_date_format(post.created_at)
